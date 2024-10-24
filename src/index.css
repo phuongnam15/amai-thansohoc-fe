@@ -32,3 +32,23 @@
   font-family: "Lora-Bold";
   src: url("./assets//fonts//Lora-Bold.ttf"), format("truetype");
 }
+
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space for vertical scrollbar */
+}
+
+/* Hiển thị thanh cuộn ngang */
+::-webkit-scrollbar-horizontal {
+  height: 5px; /* Set the height of the horizontal scrollbar */
+  background-color: #f1f1f1; /* Optional: Set the background color of the horizontal scrollbar */
+}
+
+/* Optional: customize the horizontal scrollbar thumb */
+::-webkit-scrollbar-thumb:horizontal {
+  background-color: #888; /* Set the color of the horizontal scrollbar thumb */
+}
+
+/* Optional: customize the horizontal scrollbar track */
+::-webkit-scrollbar-track:horizontal {
+  background-color: #f1f1f1; /* Set the color of the horizontal scrollbar track */
+}

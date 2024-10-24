@@ -51,7 +51,7 @@ const Header = () => {
   };
 
   return (
-    <header className="w-full p-4 bg-linear-1 sticky top-0">
+    <header className="w-full py-4 bg-linear-1 sticky top-0">
       <div className="container flex justify-between items-center">
         <div className="flex items-center gap-[7.5px] xl:gap-4">
           <img
