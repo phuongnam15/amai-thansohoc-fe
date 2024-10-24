@@ -7,3 +7,28 @@
   padding-left: 1rem;
   padding-right: 1rem;
 }
+
+@font-face {
+  font-family: "Segoe-UI";
+  src: url("./assets//fonts//Segoe-UI.ttf"), format("truetype");
+}
+@font-face {
+  font-family: "Segoe-UI-Bold";
+  src: url("./assets//fonts//Segoe-UI-Bold.ttf"), format("truetype");
+}
+@font-face {
+  font-family: "Lora-Regular";
+  src: url("./assets//fonts//Lora-Regular.ttf"), format("truetype");
+}
+@font-face {
+  font-family: "Lora-Medium";
+  src: url("./assets//fonts//Lora-Medium.ttf"), format("truetype");
+}
+@font-face {
+  font-family: "Lora=Semibold";
+  src: url("./assets//fonts//Lora-SemiBold.ttf"), format("truetype");
+}
+@font-face {
+  font-family: "Lora-Bold";
+  src: url("./assets//fonts//Lora-Bold.ttf"), format("truetype");
+}
