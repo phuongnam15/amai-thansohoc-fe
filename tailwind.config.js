@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         "primary": "#1C7540",
+        "primary-1": "#245601"
       },
       fontFamily: {
         "segoeui": ["Segoe-UI", 'sans-serif'],
@@ -14,6 +15,9 @@ module.exports = {
         "lora-semibold": ["Lora-Semibold", 'sans-serif'],
         "lora-bold": ["Lora-Bold", 'sans-serif'],
       },
+      backgroundImage: {
+        "linear-1": "linear-gradient(to top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4))"
+      }
     },
   },
   plugins: [],

@@ -4,15 +4,16 @@ import { setLanguage } from "../../../store/customizer/CustomizerSlice";
 import FlagEn from "../../../assets/images/flags/icon-flag-en.svg";
 import FlagVn from "../../../assets/images/flags/icon-flag-vn.svg";
 import { useTranslation } from "react-i18next";
+import { FiChevronUp, FiChevronDown } from "react-icons/fi";
 
 const Languages = [
   {
-    flagname: "English (UK)",
+    flagname: "English",
     icon: FlagEn,
     value: "en",
   },
   {
-    flagname: "Việt Nam (Uncle Ho)",
+    flagname: "Việt Nam",
     icon: FlagVn,
     value: "vn",
   },
@@ -40,34 +41,27 @@ const Language = () => {
   }, [customizer.isLanguage, i18n]);
 
   return (
-    <>
+    <div className="relative">
       <button
         onClick={handleClick}
-        style={{
-          background: "none",
-          border: "none",
-          cursor: "pointer",
-          padding: 0,
-        }}
+        className="flex items-center focus:outline-none"
       >
         <img
           src={currentLang.icon}
           alt={currentLang.value}
-          style={{ width: 20, height: 20 }}
+          className="xl:w-[30px] xl:h-5"
         />
+        <span className="ml-2">
+          {showMenu ? (
+            <FiChevronUp className="text-[#7D7D7D] text-2xl" />
+          ) : (
+            <FiChevronDown className="text-[#7D7D7D] text-2xl" />
+          )}
+        </span>
       </button>
+
       {showMenu && (
-        <div
-          style={{
-            position: "absolute",
-            top: "40px",
-            right: "0",
-            width: "200px",
-            background: "#fff",
-            boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
-            zIndex: 1000,
-          }}
-        >
+        <div className="absolute left-0 lg:right-0 mt-2 w-48 bg-white shadow-lg z-50">
           {Languages.map((option, index) => (
             <div
               key={index}
@@ -76,25 +70,19 @@ const Language = () => {
                 localStorage.setItem("language", option.value);
                 handleClose();
               }}
-              style={{
-                padding: "10px 15px",
-                display: "flex",
-                alignItems: "center",
-                cursor: "pointer",
-                borderBottom: "1px solid #eee",
-              }}
+              className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer border-b last:border-b-0"
             >
               <img
                 src={option.icon}
                 alt={option.flagname}
-                style={{ width: 20, height: 20, marginRight: "10px" }}
+                className="w-5 h-5 mr-2"
               />
               <span>{option.flagname}</span>
             </div>
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 };
 
