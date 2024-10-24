@@ -1,25 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import ScrollToTop from "./components/shared/ScrollToTop";
+import Router from "./routes/Router";
+import { useRoutes } from "react-router-dom";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const routing = useRoutes(Router);
+
+  return <ScrollToTop>{routing}</ScrollToTop>;
 }
 
 export default App;
