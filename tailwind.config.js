@@ -5,7 +5,8 @@ module.exports = {
     extend: {
       colors: {
         "primary": "#1C7540",
-        "primary-1": "#245601"
+        "primary-1": "#245601",
+        "footer": "#FCE9B3"
       },
       fontFamily: {
         "segoeui": ["Segoe-UI", 'sans-serif'],
