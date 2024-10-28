@@ -8,6 +8,7 @@ module.exports = {
         "primary-1": "#245601",
         "primary-2": "#FEF8E7",
         "primary-3": "#FCE9B3",
+        "footer": "#FCE9B3"
       },
       fontFamily: {
         segoeui: ["Segoe-UI", "sans-serif"],
