@@ -112,6 +112,8 @@ const HomePage = () => {
 
 
       <div className="flex justify-center items-center">
+
+
         <div className="relative">
           <img src={FormSearch} alt="" className="" />
           <div className="relative">
