@@ -7,6 +7,8 @@
   padding-left: 1rem;
   padding-right: 1rem;
 }
+.form-input {
+}
 
 @font-face {
   font-family: "Segoe-UI";
@@ -31,6 +33,22 @@
 @font-face {
   font-family: "Lora-Bold";
   src: url("./assets//fonts//Lora-Bold.ttf"), format("truetype");
+}
+@font-face {
+  font-family: "Prata-Regular";
+  src: url("./assets/fonts/Prata-Regular.ttf"), format("truetype");
+}
+@font-face {
+  font-family: "IBMPlexSans-Regular";
+  src: url("./assets/fonts/IBMPlexSans-Regular.ttf"), format("truetype");
+}
+@font-face {
+  font-family: "IBMPlexSans-Medium";
+  src: url("./assets/fonts/IBMPlexSans-Medium.ttf"), format("truetype");
+}
+@font-face {
+  font-family: "IBMPlexSans-Bold";
+  src: url("./assets/fonts/IBMPlexSans-Bold.ttf"), format("truetype");
 }
 
 ::-webkit-scrollbar {

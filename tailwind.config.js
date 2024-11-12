@@ -8,7 +8,9 @@ module.exports = {
         "primary-1": "#245601",
         "primary-2": "#FEF8E7",
         "primary-3": "#FCE9B3",
-        "footer": "#FCE9B3"
+        "footer": "#FCE9B3",
+        "linear-3": "linear-gradient(90deg, #FFF 0%, #F9F89B 100%)",
+        "linear-4": "linear-gradient(90deg, #FFF 0%, #73CBD5 100%)",
       },
       fontFamily: {
         segoeui: ["Segoe-UI", "sans-serif"],
@@ -17,11 +19,20 @@ module.exports = {
         "lora-medium": ["Lora-Medium", "sans-serif"],
         "lora-semibold": ["Lora-Semibold", "sans-serif"],
         "lora-bold": ["Lora-Bold", "sans-serif"],
+        "prata-regular": ["Prata-Regular", "sans-serif"],
+        "ibmplexsans-regular": ["IBMPlexSans-Regular", "sans-serif"],
+        "ibmplexsans-medium": ["IBMPlexSans-Medium", "sans-serif"],
+        "ibmplexsans-bold": ["IBMPlexSans-Bold", "sans-serif"],
       },
       backgroundImage: {
+        "linear-header": "linear-gradient(90deg, rgba(255, 255, 255, 0.30) 0%, rgba(115, 203, 213, 0.30) 100%)",
+        "linear-menu": "linear-gradient(90deg, rgba(255, 255, 255, 0.30) 0%, rgba(115, 203, 213, 0.30) 100%)",
+
+
         "linear-1":
           "linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.6))",
         "linear-2": "linear-gradient(180deg, #E4BEB0 0%, #FFFFFF 100%)",
+        "linear-register": "linear-gradient(0deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.10) 100%), linear-gradient(90deg, rgba(254, 255, 195, 0.80) 0%, rgba(115, 203, 213, 0.80) 50%, rgba(143, 92, 190, 0.80) 100%)",
         "cloud-1": "url('/src/assets/images/backgrounds/cloud-11.webp')",
         "cloud-2": "url('/src/assets/images/backgrounds/cloud-21.webp')",
         "cloud-3": "url('/src/assets/images/backgrounds/cloud-31.webp')",

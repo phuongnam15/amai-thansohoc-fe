@@ -1,275 +1,240 @@
-import banner from "../../assets/images/backgrounds/banner.png";
-import bode from "../../assets//images/backgrounds/bode.webp";
-import tay from "../../assets/images/backgrounds/tay.webp";
-import thap from "../../assets/images/backgrounds/thap.webp";
-import light from "../../assets/images/backgrounds/light.webp";
-import nen from "../../assets/images/backgrounds/nen.svg";
-import cloud1 from "../../assets/images/backgrounds/cloud-11.webp";
-import cloud2 from "../../assets/images/backgrounds/cloud-21.webp";
-import cloud3 from "../../assets/images/backgrounds/cloud-31.webp";
-import TopImage from "../../components/top-image/TopImage";
-import useCheckMobileScreen from "../../utils/hooks/useCheckMobileScreen";
-import handHeart from "../../assets/images/icons/hand-heart.svg";
-import handHeart2 from "../../assets/images/icons/hand-heart-2.svg";
-import box from "../../assets/images/icons/box.svg";
-import thap2 from "../../assets/images/backgrounds/thap-2.svg";
-import trungthu from "../../assets/images/backgrounds/trungthu.svg";
-import lachualanh from "../../assets/images/backgrounds/lachualanh.svg";
-import cacbannho from "../../assets/images/backgrounds/cacbannho.webp";
-import image from "../../assets/images/backgrounds/image.png";
+import { useState } from "react";
+import logo2 from "../../assets/images/logos/logo2.webp";
+import FormSearch from "../../assets/images/backgrounds/FormSearch.webp";
+import bannerHomepage from "../../assets/images/backgrounds/bannerHomepage.webp";
+import icon1 from "../../assets/images/icons/icon1.webp";
+import icon2 from "../../assets/images/icons/icon2.webp";
+import icon3 from "../../assets/images/icons/icon3.webp";
+import Group2 from "../../assets/images/backgrounds/Group2.webp";
 
 const slats = [
   {
-    slat: "100",
-    content: "Dự án đã được gây quỹ thành công",
+    slat: "200+",
+    content: "Lượt tra cứu mỗi ngày",
+    icon: icon1,
   },
   {
-    slat: "5 tỷ đồng",
-    content: "Đã được quyên góp",
+    slat: "1000+",
+    content: "Người sử dụng bản đồ",
+    icon: icon2,
   },
   {
-    slat: "10+ triệu",
-    content: "Lượt quyên góp",
-  },
-];
-
-const otherWays = [
-  {
-    text: "Doanh nghiệp từ thiện",
-    icon: handHeart,
-  },
-  {
-    text: "Đăng ký tình nguyện",
-    icon: handHeart2,
-  },
-  {
-    text: "Cá nhân từ thiện",
-    icon: box,
-  },
-];
-
-const mainEvents = [
-  {
-    text: "Tâm bồ đề",
-    icon: thap2,
-  },
-  {
-    text: "Trung thu cho em",
-    icon: trungthu,
-  },
-  {
-    text: "Mầm non từ bi",
-    icon: lachualanh,
+    slat: "100%",
+    content: "Khách hàng hài lòng với dịch vụ",
+    icon: icon3,
   },
 ];
 
 const HomePage = () => {
-  const isMobileScreen = useCheckMobileScreen();
+  const [day, setDay] = useState('');
+  const [month, setMonth] = useState('');
+  const [year, setYear] = useState('');
+
+  const days = Array.from({ length: 31 }, (_, i) => i + 1);
+  const months = [
+    'Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6',
+    'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12'
+  ];
+  const years = Array.from({ length: 100 }, (_, i) => 2024 - i);
+
+  // const isMobileScreen = useCheckMobileScreen();
   return (
-    <div className="w-full h-auto">
-      {isMobileScreen ? (
-        <TopImage cloud={cloud3} image={banner} />
-      ) : (
-        <TopImage cloud={cloud1} image={banner} />
-      )}
-      <div className="w-full h-fit xl:pt-10 pb-20 relative bg-white sm:bg-primary-2 overflow-hidden">
-        <div className="absolute w-full top-[85%]">
-          <img src={cloud2} alt="" className="w-full rotate-180" />
-        </div>
-        <div className="flex py-10 container">
-          <div className="flex flex-col flex-1 justify-center relative">
-            <h1 className="text-xl xl:text-[40px] font-lora-regular text-primary mb-2">
-              Tôi đi từ thiện
-            </h1>
-            <h4 className="font-segoeui-bold text-xs xl:text-xl text-primary mb-3 xl:mb-8">
-              Nền tảng quyên góp từ thiện - Cùng nhau xây đắp phước lành
-            </h4>
-            <p className="text-sm xl:text-base font-segoeui mb-2 xl:mb-5">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, magni
-              quidem! Modi, nostrum? Recusandae commodi iusto ab culpa rem enim?
-              Quia totam alias optio ducimus aperiam, odit earum? Voluptatibus,
-              tempore.
-            </p>
-            <div className="flex justify-between xl:justify-normal xl:gap-[52px] mb-8 px-6 xl:px-0">
-              {slats.map((item, index) => {
-                return (
-                  <div className="flex flex-col xl:gap-3">
-                    <div className="relative flex items-center mb-[-7px] xl:mb-0">
-                      <img
-                        src={bode}
-                        alt=""
-                        className="left-0 h-[65%] xl:h-auto"
-                      />
-                      <span className="absolute translate-y-1 translate-x-2 font-segoeui font-semibold text-[14.4px] xl:text-2xl text-primary">
-                        {item.slat}
-                      </span>
-                    </div>
-                    <p className="font-segoeui text-[8.4px] xl:text-sm max-w-20 xl:max-w-32">
-                      {item.content}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-            <button className="py-[7px] px-9 xl:py-[10px] xl:px-11 text-white font-segoeui font-semibold text-sm xl:text-base rounded-[32px] bg-primary self-start">
-              Quyên góp
-            </button>
+    <>
+      <div className="relative w-full h-[806px] px-[66px] flex items-end">
+        <img
+          src={bannerHomepage}
+          alt=""
+          className="object-cover absolute inset-0"
+        />
+        <div className="w-full h-[680px] flex bg-black bg-opacity-20 relative rounded-[40px]">
+
+          <div className="h-full flex-1">
+            <img
+              src={Group2}
+              alt=""
+              className="absolute top-[35px] left-[169.87px] w-[399.836px] h-[399.836px] z-9"
+            />
+            <img
+              src={logo2}
+              alt=""
+              className="absolute top-[83px] left-[187px] w-[330px] h-[597px] object-cover z-10"
+            />
           </div>
-          <div className="relative hidden sm:flex justify-center items-center flex-1">
-            <div className="relative xl:h-[500px] xl:w-[392px] bg-[#B26040] rounded-[232.5px] shadow-inset-1">
-              <img
-                src={tay}
-                alt=""
-                className="absolute bottom-0 left-1/2 -translate-x-1/2 z-[1]"
-              />
-              <img
-                src={nen}
-                alt=""
-                className="absolute bottom-0 left-1/2 -translate-x-1/2 z-[2] top-1/2 -translate-y-3/4"
-              />
-              <img
-                src={light}
-                alt=""
-                className="absolute bottom-0 left-1/2 -translate-x-1/2 z-[1] top-0"
-              />
-              <img
-                src={light}
-                alt=""
-                className="absolute bottom-0 left-1/2 -translate-x-1/2 z-[1] top-0"
-              />
-              <div className="absolute bottom-0 left-0 right-0 -top-7 overflow-hidden rounded-b-[232.5px]">
-                <img
-                  src={thap}
-                  alt=""
-                  className="absolute bottom-2 left-1/2 -translate-x-1/2 z-0"
-                />
-              </div>
+
+          <div className="relative h-full flex-[1.5] flex justify-center items-center text-center">
+            <div className="">
+              <p className="text-white text-[32px] font-prata-regular mt-[149px] mb-[32px]">
+                Thấu hiểu bản thân, làm chủ cuộc đời với
+              </p>
+              <p className=" font-ibmplexsans-bold text-[32px] text-[#FDFCCD] mb-[24px]">
+                Map for success
+              </p>
+              <p className="text-[28px] text-white font-prata-regular mb-[22px]">
+                Cùng
+              </p>
+              <p className="text-[32px] font-ibmplexsans-bold text-[#FDFCCD] mb-[61px]">
+                Ms. Nguyễn Bảo Thoa
+              </p>
+              <p className="text-[16px] text-[#fff] font-ibmplexsans-medium mb-[51px]">Nhà đào tạo, chuyên gia Coaching<br />
+                GĐCC tại Gein Academy - Học viện Lifecoach Quốc tế
+              </p>
+              <button className="w-[280px] h-[48px] text-white font-ibmplexsans-medium text-sm xl:text-base rounded-[100px] bg-linear-register ">
+                Đăng ký ngay
+              </button>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="bg-primary-3 xl:pt-14 pb-10 xl:pb-36 relative overflow-hidden">
-        <div className="absolute w-full top-[80%]">
-          <img src={cloud3} alt="" className="w-full" />
+      <div className="flex gap-x-[214px] mt-[67px] items-center justify-center bg-[#233269]">
+        <div className="">
+          <div className="flex text-white">
+            <img src={icon1} alt="" className="w-[60px] h-[60px]" />
+            <p className="font-ibmplexsans-bold text-[36px] ml-[9px]">200+</p>
+          </div>
+          <p className="font-ibmplexsans-regular mt-[26.5px] text-white">Lượt tra cứu mỗi ngày</p>
         </div>
-        <h1 className="text-xl xl:text-[36px] text-primary font-lora-regular text-center">
-          Cùng Tìm Hiểu Cách Đóng Góp Khác
-        </h1>
-        <div className="flex justify-center gap-8 xl:gap-40 mt-[18px] xl:mt-24">
-          {otherWays.map((item, index) => {
-            return (
-              <div className="flex flex-col gap-4 items-center">
-                <img
-                  src={item.icon}
-                  alt=""
-                  className="w-[65px] h-[65px] xl:w-[160px] xl:h-[160px]"
-                />
-                <span className="text-[9px] xl:text-2xl text-[#1E1E1E] font-segoeui font-semibold">
-                  {item.text}
-                </span>
-              </div>
-            );
-          })}
+        <div className="">
+          <div className="flex text-white">
+            <img src={icon2} alt="" className="w-[60px] h-[60px]" />
+            <p className="font-ibmplexsans-bold text-[36px] ml-[9px]">1000+</p>
+          </div>
+          <p className="font-ibmplexsans-regular mt-[26.5px] text-white">Người sử dụng bản đồ</p>
+        </div>
+        <div className="">
+          <div className="flex text-white">
+            <img src={icon3} alt="" className="w-[60px] h-[60px]" />
+            <p className="font-ibmplexsans-bold text-[36px] ml-[9px]">100%</p>
+          </div>
+          <p className="font-ibmplexsans-regular mt-[26.5px] text-white">Khách hàng hài lòng với dịch vụ</p>
         </div>
       </div>
 
-      <div className="bg-white xl:pt-20 xl:pb-36 relative overflow-hidden">
-        <div className="absolute w-full top-[80%]">
-          <img src={cloud1} alt="" className="w-full" />
-        </div>
-        <div className="container flex">
-          <div className="flex flex-col flex-[1.3]">
-            <h1 className="text-primary xl:text-4xl font-lora-regular xl:mb-4">
-              Các Chương Trình Chính
-            </h1>
-            <p className="font-segoeui xl:text-base text-[#3D3D3D] xl:mb-[51px]">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos
-              accusamus consectetur sunt, obcaecati distinctio culpa cum,
-              nostrum facilis dolores atque commodi nesciunt quasi aspernatur
-              cumque! Velit reprehenderit ut sunt inventore!
-            </p>
-            <div className="flex gap-6">
-              {mainEvents.map((item, index) => {
-                return (
-                  <div className="flex flex-col gap-3">
-                    <div className="w-[180px] h-[320px] rounded-[200px] bg-linear-2 relative">
-                      <div className="w-[47px] h-[47px] bg-[#fde694] rounded-full opacity-70 top-[16%] right-[15%] absolute"></div>
-                      <img
-                        src={item.icon}
-                        alt="thap"
-                        className="absolute bottom-0 left-1/2 -translate-x-1/2"
-                      />
-                    </div>
-                    <span className="font-segoeui font-semibold xl:text-xl text-center">
-                      {item.text}
-                    </span>
-                  </div>
-                );
-              })}
+
+      <div className="flex justify-center items-center">
+        <div className="relative">
+          <img src={FormSearch} alt="" className="" />
+          <div className="relative">
+            <p className="text-[32px] flex items-center justify-center font-prata-regular border-b-[1px] border-b-yellow-300">Tra cứu thần số học online</p>
+          </div>
+
+          <div className="flex gap-[24px]">
+            <div className="block">
+              <p className="mb-[12px] font-ibmplexsans-medium text-[20px]">Họ và tên khai sinh</p>
+              <input type="text" placeholder="Nhập họ và tên" className="px-[16px] py-[14px] w-[444px] h-[48px] rounded-[100px]" />
+            </div>
+
+            <div className="block">
+              <p className="mb-[12px] font-ibmplexsans-medium text-[20px]">Chọn giới tính</p>
+              <select name="gender" className="px-[16px] py-[12px] w-[444px] h-[48px] rounded-[100px]">
+                <option value="male">Nam</option>
+                <option value="female">Nữ</option>
+                <option value="other">Khác</option>
+              </select>
             </div>
           </div>
-          <div className="flex-1 flex justify-center items-center">
-            <img src={cacbannho} alt="" />
-          </div>
-        </div>
-      </div>
 
-      <div className="bg-primary-2 xl:pb-32 relative overflow-hidden">
-        <div className="absolute w-full top-[80%]">
-          <img src={cloud1} alt="" className="w-full" />
-        </div>
-        <div className="container">
-          <h1 className="text-center text-primary text-4xl font-lora-regular xl:mb-10">
-            Các Chương Trình Từ Thiện
-          </h1>
-          <div className="grid grid-cols-3 gap-6">
-            <div className="border border-[#D9D9D9] rounded-[20px] bg-white p-6 flex flex-col gap-3 hover:shadow-gray-200 hover:shadow-inset-1 transition-all duration-200">
-              <img src={image} alt="" />
-              <div className="flex flex-col gap-3">
-                <span className="font-segoeui-bold text-lg leading-6">
-                  Gây quỹ hỗ trợ xấy dụng chừa Ba Vàng-Uông Bí, Quảng Ninh
-                </span>
-                <div className="flex flex-col gap-2">
-                    <div className="flex gap-1">
-                        <span className="font-segoeui-bold text-base">100.000.000đ</span>
-                        <span>|</span>
-                        <span className="font-segoeui text-base text-[#7D7D7D]">200.000.000đ</span>
-                    </div>
-                    <div className="w-full relative h-[8px] rounded-[20px] bg-[#D9D9D9]">
-                        <div className="absolute bg-primary inset-y-0 w-1/2 rounded-[20px]"></div>
-                    </div>
-                </div>
-                <div className="flex gap-5 justify-between">
-                  <div className="flex gap-6">
-                    <div className="flex flex-col">
-                      <span className="font-segoeui text-[#7D7D7D]">Lượt quyên góp</span>
-                      <span className="font-segoeui-bold">50</span>
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="font-segoeui text-[#7D7D7D]">Đạt được</span>
-                      <span className="font-segoeui-bold">50%</span>
-                    </div>
-                  </div>
-                  <div className="bg-primary-3 py-1 px-3 flex flex-col text-[#DD8124] justify-center items-center rounded-lg">
-                    <span className="font-segoeui">Còn lại</span>
-                    <span className="font-segoeui-bold">20 ngày</span>
-                  </div>
-                </div>
-                <div className="flex gap-5 mt-4">
-                  <button className="flex-1 border border-[#FFE7BA] rounded-[32px] text-[#DD8124] py-2">
-                    Chia sẻ
-                  </button>
-                  <button className="flex-1 rounded-[32px] bg-primary text-white py-2">
-                    Quyên góp
-                  </button>
-                </div>
+          <div className="mt-[29px]">
+            <p className="font-ibmplexsans-medium text-[20px]">Ngày, tháng, năm sinh dương lịch</p>
+            <div className="flex space-x-2">
+              {/* Select Day */}
+              <select
+                value={day}
+                onChange={(e) => setDay(e.target.value)}
+                className="block w-[276px] h-[48px] px-[16px] py-[12px] rounded-[100px] border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              >
+                <option value="">Ngày</option>
+                {days.map((d) => (
+                  <option key={d} value={d}>
+                    {d}
+                  </option>
+                ))}
+              </select>
+
+              {/* Select Month */}
+              <select
+                value={month}
+                onChange={(e) => setMonth(e.target.value)}
+                className="block w-[276px] h-[48px] px-[16px] py-[12px] rounded-[100px] border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              >
+                <option value="">Tháng</option>
+                {months.map((m, index) => (
+                  <option key={index} value={index + 1}>
+                    {m}
+                  </option>
+                ))}
+              </select>
+
+              {/* Select Year */}
+              <select
+                value={year}
+                onChange={(e) => setYear(e.target.value)}
+                className="block w-[276px] h-[48px] px-[16px] py-[12px] rounded-[100px] border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              >
+                <option value="">Năm</option>
+                {years.map((y) => (
+                  <option key={y} value={y}>
+                    {y}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div className="flex gap-x-[66px] mt-[24px]">
+              <div>
+                <input type="radio" name="option1" value="option1" />
+                <label for="option1" className=" font-ibmplexsans-regular text-[16px]">Xem cả đường tình duyên, hôn nhân</label>
+              </div>
+
+              <div>
+                <input type="radio" name="option2" value="option2" />
+                <label for="option2" className=" font-ibmplexsans-regular text-[16px]">Xem số điện thoại hợp</label>
               </div>
             </div>
+
           </div>
+
+          <button className="w-[276px] h-[48px] px-[49px] py-[1px] mt-[32px] text-white text-[20px] font-ibmplexsans-medium bg-linear-register rounded-[100px]">Tra cứu</button>
+
         </div>
+
       </div>
-    </div>
+    </>
+
+
+
+
+
+
+    //             <div className="flex justify-between xl:justify-normal xl:gap-[52px] mb-8 px-6 xl:px-0">
+    //               {slats.map((item, index) => {
+    //                 return (
+    //                   <div className="flex flex-col xl:gap-3">
+    //                     <div className="relative flex items-center mb-[-7px] xl:mb-0">
+    //                       <img
+    //                         src={bode}
+    //                         alt=""
+    //                         className="left-0 h-[65%] xl:h-auto"
+    //                       />
+    //                       <span className="absolute translate-y-1 translate-x-2 font-segoeui font-semibold text-[14.4px] xl:text-2xl text-primary">
+    //                         {item.slat}
+    //                       </span>
+    //                     </div>
+    //                     <p className="font-segoeui text-[8.4px] xl:text-sm max-w-20 xl:max-w-32">
+    //                       {item.content}
+    //                     </p>
+    //                   </div>
+    //                 );
+    //               })}
+    //             </div>
+    //           </div>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div> 
+
+    //  </div >
+
   );
 };
 
