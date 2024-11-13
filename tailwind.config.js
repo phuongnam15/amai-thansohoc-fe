@@ -4,44 +4,26 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#1C7540",
-        "primary-1": "#245601",
-        "primary-2": "#FEF8E7",
-        "primary-3": "#FCE9B3",
+        "primary": "#131529",
+        "primary-2": "#83838c",
+        "primary-3": "#FDFCCD",
+        "primary-4": "#FFE8A3",
+        "primary-5": "#73CBD5",
+        "primary-6": "#F9F89B",
+        "primary-7": "#646464",
         "footer": "#FCE9B3",
-        "linear-3": "linear-gradient(90deg, #FFF 0%, #F9F89B 100%)",
-        "linear-4": "linear-gradient(90deg, #FFF 0%, #73CBD5 100%)",
       },
       fontFamily: {
-        segoeui: ["Segoe-UI", "sans-serif"],
-        "segoeui-bold": ["Segoe-UI-Bold", "sans-serif"],
-        "lora-regular": ["Lora-Regular", "sans-serif"],
-        "lora-medium": ["Lora-Medium", "sans-serif"],
-        "lora-semibold": ["Lora-Semibold", "sans-serif"],
-        "lora-bold": ["Lora-Bold", "sans-serif"],
         "prata-regular": ["Prata-Regular", "sans-serif"],
         "ibmplexsans-regular": ["IBMPlexSans-Regular", "sans-serif"],
-        "ibmplexsans-medium": ["IBMPlexSans-Medium", "sans-serif"],
-        "ibmplexsans-bold": ["IBMPlexSans-Bold", "sans-serif"],
       },
       backgroundImage: {
-        "linear-header": "linear-gradient(90deg, rgba(255, 255, 255, 0.30) 0%, rgba(115, 203, 213, 0.30) 100%)",
-        "linear-menu": "linear-gradient(90deg, rgba(255, 255, 255, 0.30) 0%, rgba(115, 203, 213, 0.30) 100%)",
-
-
         "linear-1":
-          "linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.6))",
-        "linear-2": "linear-gradient(180deg, #E4BEB0 0%, #FFFFFF 100%)",
-        "linear-register": "linear-gradient(0deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.10) 100%), linear-gradient(90deg, rgba(254, 255, 195, 0.80) 0%, rgba(115, 203, 213, 0.80) 50%, rgba(143, 92, 190, 0.80) 100%)",
-        "cloud-1": "url('/src/assets/images/backgrounds/cloud-11.webp')",
-        "cloud-2": "url('/src/assets/images/backgrounds/cloud-21.webp')",
-        "cloud-3": "url('/src/assets/images/backgrounds/cloud-31.webp')",
-        "radial-glow":
-          "radial-gradient(circle, rgba(249, 218, 127, 1) 0%, rgba(249, 218, 127, 0) 70%)",
+          "linear-gradient(0deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.10) 100%), linear-gradient(90deg, rgba(254, 255, 195, 0.80) 0%, rgba(115, 203, 213, 0.80) 50%, rgba(143, 92, 190, 0.80) 100%)",
       },
       boxShadow: {
-        "inset-1": "0px 0px 20px 6px #581C0540 inset",
-      },
+        "shadow-1": "0px 0px 16px 12px rgba(115, 203, 213, 0.20)",
+      }
     },
   },
   plugins: [],

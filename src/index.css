@@ -7,32 +7,17 @@
   padding-left: 1rem;
   padding-right: 1rem;
 }
-.form-input {
+@media (min-width: 1280px) {
+  .container {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
 }
-
-@font-face {
-  font-family: "Segoe-UI";
-  src: url("./assets//fonts//Segoe-UI.ttf"), format("truetype");
-}
-@font-face {
-  font-family: "Segoe-UI-Bold";
-  src: url("./assets//fonts//Segoe-UI-Bold.ttf"), format("truetype");
-}
-@font-face {
-  font-family: "Lora-Regular";
-  src: url("./assets//fonts//Lora-Regular.ttf"), format("truetype");
-}
-@font-face {
-  font-family: "Lora-Medium";
-  src: url("./assets//fonts//Lora-Medium.ttf"), format("truetype");
-}
-@font-face {
-  font-family: "Lora=Semibold";
-  src: url("./assets//fonts//Lora-SemiBold.ttf"), format("truetype");
-}
-@font-face {
-  font-family: "Lora-Bold";
-  src: url("./assets//fonts//Lora-Bold.ttf"), format("truetype");
+@media (min-width: 1536px) {
+  .container {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
 }
 @font-face {
   font-family: "Prata-Regular";
@@ -42,30 +27,65 @@
   font-family: "IBMPlexSans-Regular";
   src: url("./assets/fonts/IBMPlexSans-Regular.ttf"), format("truetype");
 }
-@font-face {
-  font-family: "IBMPlexSans-Medium";
-  src: url("./assets/fonts/IBMPlexSans-Medium.ttf"), format("truetype");
+.bg-introduce {
+  background: url("./assets/images/backgrounds/introduce.webp") lightgray -0.769px -150px /
+    100.107% 119.248% no-repeat;
+  mix-blend-mode: color-dodge;
 }
-@font-face {
-  font-family: "IBMPlexSans-Bold";
-  src: url("./assets/fonts/IBMPlexSans-Bold.ttf"), format("truetype");
+.wrapper {
+  display: inline-flex;
+  justify-content: center;
+}
+.typing-demo {
+  display: inline-block;
+  animation: typing 4s steps(40), blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: white 1px solid;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.form-input {
+  @apply text-primary-7 font-ibmplexsans-regular text-sm xl:text-base py-[14px] px-4 rounded-[100px] outline-none;
+}
+.form-option {
+  @apply absolute bg-white flex flex-col overflow-hidden inset-x-0 top-[105%] rounded-xl font-ibmplexsans-regular text-primary-7 border border-gray-300;
+}
+
+.border-gradient-radius {
+  border-radius: 100%;
+  border: 1px solid transparent;
+  background: linear-gradient(to bottom, white, #73cbd5, #8C5CBE) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
 }
 
 ::-webkit-scrollbar {
   width: 0; /* Remove scrollbar space for vertical scrollbar */
 }
-
 /* Hiển thị thanh cuộn ngang */
 ::-webkit-scrollbar-horizontal {
   height: 5px; /* Set the height of the horizontal scrollbar */
   background-color: #f1f1f1; /* Optional: Set the background color of the horizontal scrollbar */
 }
-
 /* Optional: customize the horizontal scrollbar thumb */
 ::-webkit-scrollbar-thumb:horizontal {
   background-color: #888; /* Set the color of the horizontal scrollbar thumb */
 }
-
 /* Optional: customize the horizontal scrollbar track */
 ::-webkit-scrollbar-track:horizontal {
   background-color: #f1f1f1; /* Set the color of the horizontal scrollbar track */

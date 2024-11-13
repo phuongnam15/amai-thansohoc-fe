@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { FiChevronDown, FiChevronUp, FiMenu, FiX } from "react-icons/fi";
-// import Language from "./Language";
-// import logo1 from "../../../assets/images/logos/logo1.webp";
-import logoheader from "../../../assets/images/logos/logoheader.svg";
+import logo from "../../../assets/images/logos/logo.svg";
 import profile from "../../../assets/images/icons/profile.svg";
+import menu from "../../../assets/images/icons/menu.svg";
+import arrowDown from "../../../assets/images/icons/arrow-down.svg";
 
 const menuItems = [
   {
@@ -22,7 +21,7 @@ const menuItems = [
     name: "Dịch vụ",
     href: "#",
     childs: [
-      { name: "Đặt tên khai sinh", href: "", },
+      { name: "Đặt tên khai sinh", href: "" },
       { name: "Đặt tên nghệ danh", href: "" },
       { name: "Đặt tên thương hiệu", href: "" },
       { name: "Định hướng nghề nghiệp", href: "" },
@@ -43,12 +42,38 @@ const menuItems = [
     name: "Liên hệ",
     href: "#",
   },
+  {
+    name: "Tài khoản",
+    href: "#",
+    childs: [
+      { name: "Thông tin tài khoản", href: "" },
+      { name: "Quên mật khẩu", href: "" },
+      { name: "Lịch sử tra cứu", href: "" },
+      { name: "Đăng xuất", href: "" },
+     
+    ],
+  },
+];
 
+const accoutArray = [
+  {
+    name: "Thông tin tài khoản",
+  },
+  {
+    name: "Quên mật khẩu",
+  },
+  {
+    name: "Lịch sử tra cứu",
+  },
+  {
+    name: "Đăng xuất",
+  },
 ];
 
 const Header = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
+  const [isAccoutDrop, setIsAccountDrop] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleMenuClick = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -59,123 +84,136 @@ const Header = () => {
   };
 
   return (
-    <header className="w-full py-4 fixed z-50 top-0">
-      <div className="container flex justify-center items-center">
-        <div className="flex items-center content-center gap-[7.5px] xl:gap-4 flex-col">
-          <img
-            src={logoheader}
-            alt="Logo"
-            className="w-[45px] h-[45px] mr-[178px]"
-          />
-          <div className="text-[12px] mr-[178px] font-prata-regular text-white text-linear-3">
-            Map for success
+    <header className="w-full absolute top-0 z-50">
+      <div className="w-full bg-gradient-to-b from-[#D9D9D933] to-[#73737333] xl:bg-none">
+        <div className="container flex justify-between items-center py-4">
+          <div className="flex flex-row xl:flex-col items-center content-center gap-2 xl:gap-1">
+            <img src={logo} alt="logo" className="w-8 h-8 xl:w-11 xl:h-11" />
+            <h1 class="text-sm xl:text-xs bg-clip-text text-transparent bg-gradient-to-r from-white to-[#F9F89B] font-prata-regular">
+              Map for success
+            </h1>
           </div>
-        </div>
 
-        {/* Mobile Menu Icon */}
-        <button className="text-3xl lg:hidden" onClick={toggleMobileMenu}>
-          {isMobileMenuOpen ? <FiX className="text-[#fff]" /> : <FiMenu className="text-[#fff]" />}
-        </button>
-
-        {/* Desktop Menu */}
-        <div className="hidden lg:flex xl:gap-5 2xl:gap-7 items-center">
-          {menuItems.map((item, index) => (
-            <div key={index} className="relative">
-              <div
-                className="flex items-center gap-1 cursor-pointer"
-                onClick={() => handleMenuClick(index)}
-              >
-                <a
-                  href={item.href}
-                  className="text-[#fff] hover:text-yellow font-segoeui font-semibold text-lg tracking-wide"
+          {/* Desktop Menu */}
+          <div className="xl:gap-10 hidden xl:flex">
+            {menuItems.slice(0, menuItems.length - 1).map((item, index) => (
+              <div key={index} className="relative">
+                <div
+                  className="flex items-center cursor-pointer"
+                  onClick={() => handleMenuClick(index)}
                 >
-                  {item.name}
-                </a>
-                {/* {item.childs && (
-                  <span>
-                    {activeIndex === index ? (
-                      <FiChevronUp className="text-[#fff] text-2xl" />
-                    ) : (
-                      <FiChevronDown className="text-[#fff] text-2xl" />
-                    )}
-                  </span> 
-                )} */}
-              </div>
-
-              {item.childs && activeIndex === index && (
-                <div className="absolute top-full left-0 -right-[215px] text-[14px] mt-2 bg-linear-menu shadow-lg p-[20px] z-10 rounded-xl items-center">
-                  {item.childs.map((child, childIndex) => (
-                    <a
-                      key={childIndex}
-                      href={child.href}
-                      className={`block px-[20px] font-ibmplexsans-regular items-center py-[6px] text-white hover:bg-slate-500 ${childIndex === 0 ? '' : 'border-t-[0.5px] border-white border-opacity-50]'}`}
-                    >
-                      {child.name}
-                    </a>
-                  ))}
+                  <a
+                    href={item.href}
+                    className="text-[#fff] font-prata-regular text-base"
+                  >
+                    {item.name}
+                  </a>
                 </div>
-              )}
-            </div>
-          ))}
-          {/* <Language /> */}
-        </div>
 
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="fixed inset-0 bg-gray-800 bg-opacity-75 z-20 flex justify-end">
-            <div className="w-80 bg-white h-full p-6 shadow-lg">
-              <button className="text-3xl mb-4" onClick={toggleMobileMenu}>
-                <FiX className="text-[#343434]" />
-              </button>
-              <div className="flex flex-col gap-4">
-                {menuItems.map((item, index) => (
-                  <div key={index} className="relative">
-                    <div
-                      className="flex items-center gap-1 cursor-pointer"
-                      onClick={() => handleMenuClick(index)}
-                    >
+                {item.childs && activeIndex === index && (
+                  <div className="backdrop-blur-2xl flex flex-col absolute top-full left-0 -right-[200px] xl:text-sm mt-2 bg-gradient-to-r from-[#FFFFFF4D] to-[#73CBD54D] shadow-lg p-5 z-10 rounded-xl">
+                    {item.childs.map((child, childIndex) => (
                       <a
-                        href={item.href}
-                        className="text-[#7D7D7D] hover:text-primary-1 font-segoeui font-semibold text-lg tracking-wide"
+                        key={childIndex}
+                        href={child.href}
+                        className={`items-center py-[6px] text-white tracking-wide font-ibmplexsans-regular ${
+                          childIndex === 0
+                            ? ""
+                            : "border-t-[0.5px] border-white border-opacity-25"
+                        }`}
                       >
-                        {item.name}
+                        {child.name}
                       </a>
-                      {item.childs && (
-                        <span>
-                          {activeIndex === index ? (
-                            <FiChevronUp className="text-[#7D7D7D] text-2xl" />
-                          ) : (
-                            <FiChevronDown className="text-[#7D7D7D] text-2xl" />
-                          )}
-                        </span>
-                      )}
-                    </div>
-
-                    {item.childs && activeIndex === index && (
-                      <div className="mt-2 bg-gray-100 shadow-lg py-2">
-                        {item.childs.map((child, childIndex) => (
-                          <a
-                            key={childIndex}
-                            href={child.href}
-                            className="block px-4 py-2 text-black hover:bg-gray-200"
-                          >
-                            {child.name}
-                          </a>
-                        ))}
-                      </div>
-                    )}
+                    ))}
                   </div>
-                ))}
-                {/* <Language /> */}
+                )}
               </div>
+            ))}
+          </div>
+          <div
+            className="relative hidden xl:flex flex-col cursor-pointer"
+            onClick={() => setIsAccountDrop(!isAccoutDrop)}
+          >
+            <div className="flex items-center gap-1">
+              <div className="w-6 h-6">
+                <img
+                  src={profile}
+                  alt=""
+                  className="ư-full h-full object-cover"
+                />
+              </div>
+              <span className="font-prata-regular text-base text-white translate-y-[2px]">
+                Tài khoản
+              </span>
+            </div>
+            <div
+              className={`backdrop-blur-sm flex flex-col absolute top-6 -left-24 right-0 text-sm mt-2 bg-gradient-to-r from-[#FFFFFF4D] to-[#73CBD54D] shadow-lg p-5 z-10 rounded-xl ${
+                !isAccoutDrop && "hidden"
+              }`}
+            >
+              {accoutArray.map((child, childIndex) => (
+                <a
+                  key={childIndex}
+                  href={child.href}
+                  className={`items-center py-[6px] text-white tracking-wide font-ibmplexsans-regular ${
+                    childIndex === 0
+                      ? ""
+                      : "border-t-[0.5px] border-white border-opacity-25"
+                  }`}
+                >
+                  {child.name}
+                </a>
+              ))}
             </div>
           </div>
-        )}
-        <div className="flex items-center ml-[185px] cursor-pointer">
-          <img src={profile} alt="" className="w-[24px] h-[24px]" />
-          <span className=" font-prata-regular text-[16px] text-white">Tài khoản</span>
+
+          {/* mobile menu */}
+          <div className="h-8 w-8 xl:hidden" onClick={toggleMobileMenu}>
+            <img src={menu} alt="w-full h-full" />
+          </div>
         </div>
       </div>
+      {isMobileMenuOpen && (
+        <div className="bg-[#0E0D21] bg-opacity-75 z-0 flex justify-end">
+          <div className="w-3/4 h-full px-5 py-2 shadow-lg bg-gradient-to-t from-[#D9D9D966] to-[#73737366] backdrop-blur-lg">
+            <div className="flex flex-col">
+              {menuItems.map((item, index) => (
+                <div key={index} className={`relative py-4`}>
+                  {index !== 0 && (
+                    <div className="h-[0.5px] absolute top-0 w-full bg-gradient-to-r from-[#ffffff66] to-[#F9F89B66]"></div>
+                  )}
+                  <div
+                    className="flex items-center justify-between gap-1 cursor-pointer"
+                    onClick={() => handleMenuClick(index)}
+                  >
+                    <a
+                      href={item.href}
+                      className="text-white font-prata-regular text-base leading-normal"
+                    >
+                      {item.name}
+                    </a>
+                    {item.childs && <img src={arrowDown} alt="drop-icon" />}
+                  </div>
+
+                  {item.childs && activeIndex === index && (
+                    <div className="mt-1 py-2">
+                      {item.childs.map((child, childIndex) => (
+                        <a
+                          key={childIndex}
+                          href={child.href}
+                          className="block px-4 py-1 text-white font-ibmplexsans-regular text-base tracking-wide"
+                        >
+                          {child.name}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 };

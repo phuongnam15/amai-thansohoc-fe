@@ -1,0 +1,23 @@
+<svg width="1192" height="460" viewBox="0 0 1192 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<!-- Nền gradient với bo góc nằm bên trong viền -->
+	<rect x="7" y="7" width="1178" height="446" rx="33" fill="url(#backgroundGradient)" />
+	<g style="mix-blend-mode:hard-light" filter="url(#filter0_f_441_4071)">
+		<rect x="7" y="7" width="1178" height="446" rx="33" stroke="url(#paint0_linear_441_4071)" stroke-width="2" />
+	</g>
+	<defs>
+		<!-- Định nghĩa nền gradient từ trên xuống dưới -->
+		<linearGradient id="backgroundGradient" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+			<stop offset="0%" stop-color="#D9D9D933" />
+			<stop offset="100%" stop-color="#73737333" />
+		</linearGradient>
+		<filter id="filter0_f_441_4071" x="0" y="0" width="1192" height="460" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix" />
+			<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+			<feGaussianBlur stdDeviation="3" result="effect1_foregroundBlur_441_4071" />
+		</filter>
+		<linearGradient id="paint0_linear_441_4071" x1="8" y1="230" x2="1184" y2="230" gradientUnits="userSpaceOnUse">
+			<stop stop-color="white" />
+			<stop offset="1" stop-color="#73CBD5" />
+		</linearGradient>
+	</defs>
+</svg>
