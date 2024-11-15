@@ -30,7 +30,21 @@
 .bg-introduce {
   background: url("./assets/images/backgrounds/introduce.webp") lightgray -0.769px -150px /
     100.107% 119.248% no-repeat;
+  background-position: center;
+  background-size: cover;
   mix-blend-mode: color-dodge;
+  filter: brightness(0.92);
+}
+.bg-content-introduce {
+  border-radius: 40px;
+  background: linear-gradient(
+    104deg,
+    rgba(217, 217, 217, 0.2) 0.14%,
+    rgba(100, 100, 100, 0.2) 99.86%
+  );
+  mix-blend-mode: multiply;
+  box-shadow: 10px 10px 20px 0px rgba(25, 24, 51, 0.1) inset;
+  filter: blur(2px);
 }
 .wrapper {
   display: inline-flex;
@@ -58,7 +72,7 @@
 }
 
 .form-input {
-  @apply text-primary-7 font-ibmplexsans-regular text-sm xl:text-base py-[14px] px-4 rounded-[100px] outline-none;
+  @apply text-primary-7 font-ibmplexsans-regular text-sm xl:text-base py-3 xl:py-[14px] px-4 rounded-[100px] outline-none;
 }
 .form-option {
   @apply absolute bg-white flex flex-col overflow-hidden inset-x-0 top-[105%] rounded-xl font-ibmplexsans-regular text-primary-7 border border-gray-300;
@@ -67,9 +81,8 @@
 .border-gradient-radius {
   border-radius: 100%;
   border: 1px solid transparent;
-  background: linear-gradient(to bottom, white, #73cbd5, #8C5CBE) border-box;
-  -webkit-mask: linear-gradient(#fff 0 0) padding-box,
-    linear-gradient(#fff 0 0);
+  background: linear-gradient(to bottom, white, #73cbd5, #8c5cbe) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
 }

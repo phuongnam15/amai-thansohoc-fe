@@ -18,11 +18,15 @@ module.exports = {
         "ibmplexsans-regular": ["IBMPlexSans-Regular", "sans-serif"],
       },
       backgroundImage: {
+        "blur-desktop": "url('/src/assets/images/backgrounds/BG.webp')",
+        "blur-mobile": "url('/src/assets/images/backgrounds/BG-mobile.svg')",
+        "stars": "url('/src/assets/images/backgrounds/stars.svg')",
         "linear-1":
           "linear-gradient(0deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.10) 100%), linear-gradient(90deg, rgba(254, 255, 195, 0.80) 0%, rgba(115, 203, 213, 0.80) 50%, rgba(143, 92, 190, 0.80) 100%)",
       },
       boxShadow: {
         "shadow-1": "0px 0px 16px 12px rgba(115, 203, 213, 0.20)",
+        "shadow-2": "10px 10px 20px 0px rgba(25, 24, 51, 0.10) inset",
       }
     },
   },

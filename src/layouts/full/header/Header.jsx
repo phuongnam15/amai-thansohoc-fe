@@ -84,8 +84,8 @@ const Header = () => {
   };
 
   return (
-    <header className="w-full absolute top-0 z-50">
-      <div className="w-full bg-gradient-to-b from-[#D9D9D933] to-[#73737333] xl:bg-none">
+    <header className="w-full sticky xl:absolute top-0 z-50">
+      <div className="w-full bg-gradient-to-b from-[#D9D9D933] to-[#73737333] backdrop-blur-lg xl:backdrop-blur-none xl:bg-none">
         <div className="container flex justify-between items-center py-4">
           <div className="flex flex-row xl:flex-col items-center content-center gap-2 xl:gap-1">
             <img src={logo} alt="logo" className="w-8 h-8 xl:w-11 xl:h-11" />
@@ -174,7 +174,7 @@ const Header = () => {
         </div>
       </div>
       {isMobileMenuOpen && (
-        <div className="bg-[#0E0D21] bg-opacity-75 z-0 flex justify-end">
+        <div className="bg-[#0E0D21] bg-opacity-75 z-0 flex justify-end absolute inset-x-0">
           <div className="w-3/4 h-full px-5 py-2 shadow-lg bg-gradient-to-t from-[#D9D9D966] to-[#73737366] backdrop-blur-lg">
             <div className="flex flex-col">
               {menuItems.map((item, index) => (
