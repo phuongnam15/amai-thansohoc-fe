@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import introduceWomen from "../../assets/images/backgrounds/introduce-women.webp";
 import ancientCharacters from "../../assets/images/backgrounds/ancient-characters.webp";
 import solarSystem from "../../assets/images/backgrounds/solar-system.webp";
@@ -11,9 +11,25 @@ import book from "../../assets/images/icons/book.svg";
 import hand from "../../assets/images/icons/hand.svg";
 import gradientBlurRadiusBorder from "../../assets/images/backgrounds/gradient-blur-radius-border.svg";
 import gradientBlurRadiusBorderMb from "../../assets/images/backgrounds/gradient-blur-radius-border-mb.svg";
+import bgPackage from "../../assets/images/backgrounds/bg-package.svg";
 import arrowDown2 from "../../assets/images/icons/arrow-down-2.svg";
 import introduce from "../../assets/images/backgrounds/introduce.webp";
 import useCheckMobileScreen from "../../utils/hooks/useCheckMobileScreen";
+import moon from "../../assets/images/backgrounds/moon.webp";
+import tired1 from "../../assets/images/tired-1.webp";
+import tired2 from "../../assets/images/tired-2.webp";
+import tired3 from "../../assets/images/tired-3.webp";
+import zodiacLeft from "../../assets/images/backgrounds/zodiac-left.svg";
+import zodiacRight from "../../assets/images/backgrounds/zodiac-right.svg";
+import oldMan from "../../assets/images/backgrounds/old-man.webp";
+import stars1 from "../../assets/images/backgrounds/stars-1.svg";
+import stars2 from "../../assets/images/backgrounds/stars-2.svg";
+import stars3 from "../../assets/images/backgrounds/stars-3.svg";
+import feedback from "../../assets/images/backgrounds/feedback.svg";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import customer from "../../assets/images/customer.webp";
+import eye1 from "../../assets/images/backgrounds/eye-1.svg";
+import eye2 from "../../assets/images/backgrounds/eye-2.svg";
 
 const slats = [
   {
@@ -33,6 +49,101 @@ const slats = [
   },
 ];
 
+const packages = [
+  {
+    name: "Gói cơ bản",
+    info: [
+      "Dành cho học sinh, sinh viên",
+      "45' Coaching và tư vấn",
+      "Nắm bắt 3 chỉ số Tam giác vàng giúp định hướng và chọn ngành, chọn nghề",
+    ],
+    price: 499000,
+    priceDisplay: 990000,
+    expiredTime: "12:30:30",
+  },
+  {
+    name: "Gói VIP",
+    info: [
+      "Dành cho người đi làm",
+      "Bản đồ Vip 21 chỉ số giúp định hướng sự nghiệp, phát triển bản thân, cải thiện kỹ năng",
+      "Dự báo thách thức, cơ hội trong tương lai",
+      "Lên mục tiêu lộ trình, kế hoạch cụ thể",
+      "Bộ tài liệu “4 bước phát triển bản thân”",
+      "Khóa học phát triển bản thân và tư duy “Change For Success”",
+      "2h Coaching",
+    ],
+    price: 2990000,
+    priceDisplay: 6000000,
+    expiredTime: "12:30:30",
+  },
+  {
+    name: "Gói Super VIP",
+    info: [
+      "Dành cho người đi làm cấp quản lý, lãnh đạo, chủ doanh nghiệp",
+      "Bản đồ Vip 21 chỉ số giúp định hướng sự nghiệp, phát triển bản thân, tổ chức",
+      "Dự báo thách thức, cơ hội trong tương lai",
+      "Lên mục tiêu lộ trình, kế hoạch cụ thể cho cá nhân và tổ chức",
+      "Bộ tài liệu “4 bước phát triển bản thân”",
+      "Khóa học phát triển bản thân và tư duy “Change For Success”",
+      "3h Coaching + 90 ngày đồng hành",
+    ],
+    price: 4990000,
+    priceDisplay: 10000000,
+    expiredTime: "12:30:30",
+  },
+];
+
+const feedbacks = [
+  {
+    image: customer,
+    text: "Lorem ipsum dolor sit amet consectetur. Est condimentum felis enim ac. Sapien nunc vulputate dolor viverra. Eget habitasse egestas condimentum sagittis accumsan at. Sagittis at venenatis sagittis urna.",
+    name: "Mr. Tony Dzung",
+  },
+  {
+    image: customer,
+    text: "Lorem ipsum dolor sit amet consectetur. Est condimentum felis enim ac. Sapien nunc vulputate dolor viverra. Eget habitasse egestas condimentum sagittis accumsan at. Sagittis at venenatis sagittis urna.",
+    name: "Mr. Tony Dza",
+  },
+  {
+    image: customer,
+    text: "Lorem ipsum dolor sit amet consectetur. Est condimentum felis enim ac. Sapien nunc vulputate dolor viverra. Eget habitasse egestas condimentum sagittis accumsan at. Sagittis at venenatis sagittis urna.",
+    name: "Mr. Tony Dza",
+  },
+  {
+    image: customer,
+    text: "Lorem ipsum dolor sit amet consectetur. Est condimentum felis enim ac. Sapien nunc vulputate dolor viverra. Eget habitasse egestas condimentum sagittis accumsan at. Sagittis at venenatis sagittis urna.",
+    name: "Mr. Tony Dza",
+  },
+  {
+    image: customer,
+    text: "Lorem ipsum dolor sit amet consectetur. Est condimentum felis enim ac. Sapien nunc vulputate dolor viverra. Eget habitasse egestas condimentum sagittis accumsan at. Sagittis at venenatis sagittis urna.",
+    name: "Mr. Tony Dza",
+  },
+];
+
+const questions = [
+  {
+    title: "Bản đồ Map For Success là gì?",
+    answer: `Công cụ Bản đồ thành công-Map For Success được dựa trên những nghiên cứu khoa học về năng lượng các con số của ông tổ Toán học, Triết học là Pytago (Người khai sinh ra Định lý Pytago). Ông có niềm tin sâu sắc rằng “Tất cả mọi thứ trong vũ trụ đều mang năng lượng và có mối liên hệ mật thiết với các con số"Vì vậy, ông đã nghiên cứu và phát triển một bộ môn khoa học có tên "Numerology" - Dựa vào ngày tháng năm sinh và họ tên của một người, để mã hoá thành 1 bản đồ nhân số học dành riêng cho người đó.`,
+  },
+  {
+    title: "Tại sao thần số học lại quan trọng?",
+    answer: `Công cụ Bản đồ thành công-Map For Success được dựa trên những nghiên cứu khoa học về năng lượng các con số của ông tổ Toán học, Triết học là Pytago (Người khai sinh ra Định lý Pytago). Ông có niềm tin sâu sắc rằng “Tất cả mọi thứ trong vũ trụ đều mang năng lượng và có mối liên hệ mật thiết với các con số"Vì vậy, ông đã nghiên cứu và phát triển một bộ môn khoa học có tên "Numerology" - Dựa vào ngày tháng năm sinh và họ tên của một người, để mã hoá thành 1 bản đồ nhân số học dành riêng cho người đó.`,
+  },
+  {
+    title: "Chỉ số đường đời là gì?",
+    answer: `Công cụ Bản đồ thành công-Map For Success được dựa trên những nghiên cứu khoa học về năng lượng các con số của ông tổ Toán học, Triết học là Pytago (Người khai sinh ra Định lý Pytago). Ông có niềm tin sâu sắc rằng “Tất cả mọi thứ trong vũ trụ đều mang năng lượng và có mối liên hệ mật thiết với các con số"Vì vậy, ông đã nghiên cứu và phát triển một bộ môn khoa học có tên "Numerology" - Dựa vào ngày tháng năm sinh và họ tên của một người, để mã hoá thành 1 bản đồ nhân số học dành riêng cho người đó.`,
+  },
+  {
+    title: "Chỉ số sứ mệnh là gì?",
+    answer: `Công cụ Bản đồ thành công-Map For Success được dựa trên những nghiên cứu khoa học về năng lượng các con số của ông tổ Toán học, Triết học là Pytago (Người khai sinh ra Định lý Pytago). Ông có niềm tin sâu sắc rằng “Tất cả mọi thứ trong vũ trụ đều mang năng lượng và có mối liên hệ mật thiết với các con số"Vì vậy, ông đã nghiên cứu và phát triển một bộ môn khoa học có tên "Numerology" - Dựa vào ngày tháng năm sinh và họ tên của một người, để mã hoá thành 1 bản đồ nhân số học dành riêng cho người đó.`,
+  },
+  {
+    title: "Chỉ số linh hồn là gì?",
+    answer: `Công cụ Bản đồ thành công-Map For Success được dựa trên những nghiên cứu khoa học về năng lượng các con số của ông tổ Toán học, Triết học là Pytago (Người khai sinh ra Định lý Pytago). Ông có niềm tin sâu sắc rằng “Tất cả mọi thứ trong vũ trụ đều mang năng lượng và có mối liên hệ mật thiết với các con số"Vì vậy, ông đã nghiên cứu và phát triển một bộ môn khoa học có tên "Numerology" - Dựa vào ngày tháng năm sinh và họ tên của một người, để mã hoá thành 1 bản đồ nhân số học dành riêng cho người đó.`,
+  },
+];
+
 const HomePage = () => {
   const [isCheckLove, setIsCheckLove] = useState(false);
   const [isCheckAppropriatePhone, setIsCheckAppropriatePhone] = useState(false);
@@ -41,10 +152,21 @@ const HomePage = () => {
   const [dateOfBirth, setDateOfBirth] = useState("");
   const [monthOfBirth, setMonthOfBirth] = useState("");
   const [yearOfBirth, setYearOfBirth] = useState("");
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const isMobileScreen = useCheckMobileScreen();
+  const [selectedQuestion, setSelectedQuestion] = useState(null);
 
   const days = Array.from({ length: 31 }, (_, i) => i + 1);
   const months = Array.from({ length: 12 }, (_, i) => `Tháng ${i + 1}`);
+
+  const moveSlide = (direction) => {
+    setCurrentSlideIndex((prevIndex) => {
+      const newIndex = prevIndex + direction;
+      if (newIndex < 0) return 0;
+      if (newIndex >= feedbacks.length) return feedbacks.length - 1;
+      return newIndex;
+    });
+  };
 
   return (
     <>
@@ -208,7 +330,7 @@ const HomePage = () => {
           <div className="absolute inset-0 xl:py-16">
             <div className="container flex flex-col items-center justify-center gap-3 xl:gap-11 h-full">
               <div className="flex flex-col items-center gap-1 xl:gap-2">
-                <h1 className="text-xl xl:text-[2rem] font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
+                <h1 className="text-xl leading-10 xl:text-[2rem] font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
                   Tra cứu thần số học online
                 </h1>
                 <div className="w-[45%] bg-gradient-to-r from-white to-primary-6 h-[1px]"></div>
@@ -411,6 +533,353 @@ const HomePage = () => {
                 <button className="text-white px-12 py-2 text-base font-ibmplexsans-regular font-medium bg-linear-1 rounded-[100px] border-[0.5px] border-white backdrop-blur-lg">
                   Tra cứu
                 </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="relative bg-primary">
+        <div className="absolute inset-0 bg-[#233269] mix-blend-overlay z-10"></div>
+        <div className="absolute inset-0 bg-galaxy filter brightness-75 mix-blend-exclusion"></div>
+        <div className="w-full relative z-10">
+          <div className="container flex flex-col xl:gap-16 xl:py-16">
+            <div className="w-full flex justify-center absolute top-1/2 -translate-y-1/2 -translate-x-[10%]">
+              <div className="xl:w-[736px] xl:h-[736px]">
+                <img src={moon} alt="" />
+              </div>
+            </div>
+
+            <div className="flex relative">
+              <div className="flex flex-col flex-1 justify-end xl:pr-[100px] xl:gap-10">
+                <div className="flex flex-col items-center gap-1 xl:gap-2">
+                  <h1 className="text-xl leading-10 xl:text-[28px] font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
+                    Bạn có từng cảm thấy
+                  </h1>
+                  <div className="w-[45%] bg-gradient-to-r from-white to-primary-6 h-[1px]"></div>
+                </div>
+                <div className="">
+                  <ul className="font-ibmplexsans-regular xl:text-base text-white list-disc">
+                    <li>
+                      Mông lung, mất định hướng trong công việc, sự nghiệp không
+                      phát triển.
+                    </li>
+                    <li>
+                      Công việc hiện tại nhàm chán, muốn chuyển sang 1 công việc
+                      mới, nhưng không biết bắt đầu từ đâu.
+                    </li>
+                    <li>
+                      Khao khát bứt phá bản thân, vượt ra khỏi vùng an toàn,
+                      nhưng sợ đi nhầm hướng, sợ không làm được.
+                    </li>
+                    <li>
+                      Chưa thực sự biết mình là ai, muốn thấu hiểu chính mình,
+                      khám phá tiềm năng bản thân, phát huy điểm mạnh, hạn chế
+                      điểm yếu.
+                    </li>
+                    <li>
+                      Làm việc không có kế hoạch, không có mục tiêu, làm 1 thời
+                      gian lại bỏ, công việc trì trệ, bản thân trì hoãn, thiếu
+                      kỷ luật.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="relative flex-[1.3] xl:h-[400px] rounded-[20px] overflow-hidden">
+                <img
+                  src={tired1}
+                  alt=""
+                  className="absolute w-full h-full object-cover"
+                />
+                <div className="border-gradient-radius-2 absolute inset-0"></div>
+              </div>
+            </div>
+            <div className="flex relative">
+              <div className="relative flex-[1.3] xl:h-[400px] rounded-[20px] overflow-hidden">
+                <img
+                  src={tired2}
+                  alt=""
+                  className="absolute w-full h-full object-cover"
+                />
+                <div className="border-gradient-radius-2 absolute inset-0"></div>
+              </div>
+              <div className="flex flex-col flex-1 justify-center xl:pl-[100px] xl:gap-10">
+                <div className="flex flex-col items-center gap-1 xl:gap-2">
+                  <h1 className="text-xl text-center xl:px-16 leading-10 xl:text-[28px] font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
+                    Hoặc đang làm quản lý, lãnh đạo nhưng
+                  </h1>
+                  <div className="w-[45%] bg-gradient-to-r from-white to-primary-6 h-[1px]"></div>
+                </div>
+                <div className="">
+                  <ul className="font-ibmplexsans-regular xl:text-base text-white list-disc">
+                    <li>
+                      Gặp vấn đề về nhân sự, không thấu hiểu nhân viên, không
+                      biết sắp xếp nhân sự đúng sở trường, đúng năng lực, đúng
+                      vị trí.
+                    </li>
+                    <li>
+                      Bạn muốn kinh doanh nhưng không biết liệu mình có phù hợp,
+                      không có định hướng, không lựa chọn được sản phẩm, ngành
+                      nghề, lĩnh vực, thiếu kiến thức, thiếu kỹ năng.
+                    </li>
+                    <li>
+                      Luẩn quẩn trong vấn đề về tài chính, kinh tế bấp bênh, thu
+                      nhập chỉ đủ duy trì cuộc sống.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className="flex relative">
+              <div className="flex flex-col flex-1 justify-end xl:pr-[100px] xl:gap-10">
+                <div className="flex flex-col items-center gap-1 xl:gap-2">
+                  <h1 className="text-xl text-center px-6 leading-10 xl:text-[28px] font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
+                    Gặp trục trặc trong cuộc sống hôn nhân
+                  </h1>
+                  <div className="w-[45%] bg-gradient-to-r from-white to-primary-6 h-[1px]"></div>
+                </div>
+                <div className="">
+                  <ul className="font-ibmplexsans-regular xl:text-base text-white list-disc">
+                    <li>
+                      Không hiểu nhau, lắng nghe không đúng cách hoặc né tránh
+                      các cuộc trò chuyện quan trọng.
+                    </li>
+                    <li>
+                      Bất đồng về cách chi tiêu, tiết kiệm, hoặc áp lực kinh tế.
+                    </li>
+                    <li>
+                      Một hoặc cả hai cảm thấy không còn được yêu thương, ít
+                      quan tâm hoặc ít thời gian cho nhau.
+                    </li>
+                    <li>
+                      Không rõ ràng trong việc phân chia công việc nhà và trách
+                      nhiệm nuôi dạy con cái.
+                    </li>
+                    <li>
+                      Công việc căng thẳng khiến một trong hai hoặc cả hai trở
+                      nên mệt mỏi, ít quan tâm đến hôn nhân.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="relative flex-[1.3] xl:h-[400px] rounded-[20px] overflow-hidden">
+                <img
+                  src={tired3}
+                  alt=""
+                  className="absolute w-full h-full object-cover"
+                />
+                <div className="border-gradient-radius-2 absolute inset-0"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="relative flex flex-col gap-6 z-10">
+          <div className="w-full flex justify-between items-center">
+            <img src={zodiacLeft} alt="" />
+            <img src={oldMan} alt="" />
+            <img src={zodiacRight} alt="" />
+          </div>
+          <div className="flex flex-col gap-3 justify-center text-center mt-6">
+            <h1 className="text-xl xl:text-[28px] font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
+              Nếu bạn đang gặp các vấn đề trên mà chưa tìm được cách giải quyết
+            </h1>
+            <h1 className="text-xl xl:text-[24px] font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
+              Tấm bản đồ thành công MAP FOR SUCCESS là dành cho bạn
+            </h1>
+          </div>
+        </div>
+
+        <div className="relative z-10 xl:py-16">
+          <div className="container flex flex-col xl:gap-12">
+            <div className="flex flex-col items-center gap-1 xl:gap-2">
+              <h1 className="text-xl xl:text-[2rem] leading-10 font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
+                Thông tin các gói Coaching
+              </h1>
+              <div className="w-[15%] bg-gradient-to-r from-white to-primary-6 h-[1px]"></div>
+            </div>
+            <div className="flex xl:gap-6">
+              {packages.map((item, index) => {
+                return (
+                  <div key={index} className="relative w-[376px] h-[518px]">
+                    <div className="absolute inset-0">
+                      <img
+                        src={bgPackage}
+                        alt=""
+                        className="absolute inset-0 z-10"
+                      />
+                      <div className="w-full absolute bottom-0 flex justify-center z-10">
+                        <button className="py-2 px-12 text-white xl:-translate-y-1 2xl:translate-y-2 text-base font-medium font-ibmplexsans-regular bg-linear-1 rounded-[100px] backdrop-blur-lg">
+                          Đăng kí ngay
+                        </button>
+                      </div>
+                    </div>
+                    <div className="flex flex-col relative w-full h-full">
+                      <div className="flex items-center justify-center h-20 w-full">
+                        <h1 className="font-prata-regular xl:text-2xl text-white">
+                          {item.name}
+                        </h1>
+                      </div>
+                      <div className="pt-8 pl-12 pr-6 w-full flex-1">
+                        <ul className="list-disc text-white font-ibmplexsans-regular font-medium text-base">
+                          {item.info.map((childItem, childIndex) => {
+                            return <li key={childIndex}>{childItem}</li>;
+                          })}
+                        </ul>
+                      </div>
+                      <div className="flex-col flex w-full items-center gap-2 pb-16">
+                        <div className="space-x-1">
+                          <span className="text-[#D9D9D9] text-base font-prata-regular line-through">
+                            {item.priceDisplay.toLocaleString("vi-VN") + "đ"}
+                          </span>
+                          <span className="text-2xl font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
+                            {item.price.toLocaleString("vi-VN") + "đ"}
+                          </span>
+                        </div>
+                        <span className="font-ibmplexsans-regular text-base text-white font-medium">
+                          Ưu đãi sẽ hết sau 12:30:30{" "}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="relative">
+        <div className="absolute inset-0 bg-linear-3 z-10"></div>
+        <img src={stars1} alt="" className="absolute top-0 left-0 z-10" />
+        <div className="flex relative z-10 container">
+          <div className="flex gap-24 w-full">
+            <div className="flex flex-col xl:gap-10 pt-16 flex-1">
+              <div className="flex flex-col gap-1 xl:gap-2">
+                <h1 className="text-xl leading-10 xl:text-[2rem] font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
+                  Khách hàng nói gì về
+                </h1>
+                <h1 className="text-xl leading-10 xl:text-[2rem] font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
+                  Map For Success
+                </h1>
+                <div className="w-[42%] bg-gradient-to-r from-white to-primary-6 h-[1px]"></div>
+              </div>
+              <img src={feedback} alt="" />
+            </div>
+            <div className="flex-[1.5] h-full relative">
+              <div className="absolute top-1/2 -translate-y-1/2 w-[120%] left-1/2 -translate-x-1/2 flex justify-between">
+                <div
+                  onClick={() => moveSlide(-1)}
+                  className="w-6 h-6 bg-gray-400 rounded-full flex justify-center items-center"
+                >
+                  <MdKeyboardArrowLeft className="text-white text-xl" />
+                </div>
+                <div
+                  onClick={() => moveSlide(1)}
+                  className="w-6 h-6 bg-gray-400 rounded-full flex justify-center items-center"
+                >
+                  <MdKeyboardArrowRight className="text-white text-xl" />
+                </div>
+              </div>
+              <div className="relative flex w-full h-full overflow-hidden">
+                <div
+                  className="flex absolute left-0 h-full transition-transform duration-300"
+                  style={{
+                    transform: `translateX(-${currentSlideIndex * 376}px)`,
+                  }}
+                >
+                  {feedbacks.map((item, index) => {
+                    return (
+                      <div
+                        key={index}
+                        className="w-[376px] flex-shrink-0 flex items-center"
+                      >
+                        <div className="flex flex-col xl:gap-8 pr-6">
+                          <div className="flex xl:gap-8 items-center">
+                            <div className="relative w-[120px] h-[120px] rounded-full overflow-hidden">
+                              <img
+                                src={item.image}
+                                alt="customer"
+                                className="absolute inset-0"
+                              />
+                            </div>
+                            <span className="font-prata-regular xl:text-xl text-transparent bg-gradient-to-r from-white to-[#73CBD5] bg-clip-text">
+                              {item.name}
+                            </span>
+                          </div>
+                          <p className="text-base font-ibmplexsans-regular leading-6 text-white">
+                            {item.text}
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="relative">
+          <img src={stars2} alt="" className="absolute top-0 left-0 z-10" />
+          <img src={stars3} alt="" className="absolute top-0 right-0 z-10" />
+          <img
+            src={eye1}
+            alt=""
+            className="absolute top-1/2 -translate-y-1/3 left-0 z-10 mix-blend-color-dodge"
+          />
+          <img
+            src={eye2}
+            alt=""
+            className="absolute top-[15%] right-0 z-10 mix-blend-color-dodge"
+          />
+          <div className="container relative z-10 py-12">
+            <div className="px-[76px] flex flex-col xl:gap-16">
+              <div className="flex flex-col items-center gap-1 xl:gap-2">
+                <h1 className="text-xl leading-10 xl:text-[2rem] font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
+                  Giải đáp thắc mắc
+                </h1>
+                <div className="w-[18%] bg-gradient-to-r from-white to-primary-6 h-[1px]"></div>
+              </div>
+              <div className="relative">
+                <div className="w-full flex flex-col gap-4 xl:pl-16">
+                  {questions.map((item, index) => {
+                    return (
+                      <div className="flex flex-col">
+                        <div className="px-6 flex flex-col gap-5">
+                          <div
+                            onClick={() =>
+                              setSelectedQuestion(
+                                selectedQuestion === index ? null : index
+                              )
+                            }
+                            className="cursor-pointer transition-all duration-500 flex gap-5 items-center relative"
+                          >
+                            <span className="text-base xl:text-xl text-white font-ibmplexsans-regular font-medium">
+                              {item.title}
+                            </span>
+                            <img
+                              src={arrowDown2}
+                              alt=""
+                              className={`text-2xl flex-shrink-0 ${
+                                selectedQuestion === index ? "rotate-180" : ""
+                              }`}
+                            />
+                          </div>
+                          <div
+                            className={`overflow-hidden transition-all duration-500 ${
+                              selectedQuestion === index
+                                ? "max-h-[200px]"
+                                : "max-h-0"
+                            }`}
+                          >
+                            <p className=" text-sm xl:text-base font-ibmplexsans-regular text-white pb-2">
+                              {item.answer}
+                            </p>
+                          </div>
+                        </div>
+                        <div className="w-full bg-gradient-to-r from-white to-primary-6 h-[1px]"></div>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>

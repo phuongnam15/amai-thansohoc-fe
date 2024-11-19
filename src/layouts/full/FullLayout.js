@@ -10,7 +10,7 @@ const FullLayout = () => {
         <div className="absolute inset-0 bg-black opacity-50 xl:opacity-40"></div>
       </div>
       <Header />
-      <div className="flex-1 w-full relative">
+      <div className="flex-1 w-full relative overflow-hidden">
         <Outlet />
       </div>
       <Footer />
