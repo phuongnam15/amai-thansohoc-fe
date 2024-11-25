@@ -18,6 +18,7 @@ module.exports = {
         "ibmplexsans-regular": ["IBMPlexSans-Regular", "sans-serif"],
       },
       backgroundImage: {
+        "galaxy-2": "url('/src/assets/images/backgrounds/galaxy-2.webp')",
         "blur-desktop": "url('/src/assets/images/backgrounds/BG.webp')",
         "blur-mobile": "url('/src/assets/images/backgrounds/BG-mobile.svg')",
         stars: "url('/src/assets/images/backgrounds/stars.svg')",

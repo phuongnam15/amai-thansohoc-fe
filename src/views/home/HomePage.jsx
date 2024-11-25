@@ -22,6 +22,7 @@ import tired3 from "../../assets/images/tired-3.webp";
 import zodiacLeft from "../../assets/images/backgrounds/zodiac-left.svg";
 import zodiacRight from "../../assets/images/backgrounds/zodiac-right.svg";
 import oldMan from "../../assets/images/backgrounds/old-man.webp";
+import oldMan2 from "../../assets/images/backgrounds/old-man-2.webp";
 import stars1 from "../../assets/images/backgrounds/stars-1.svg";
 import stars2 from "../../assets/images/backgrounds/stars-2.svg";
 import stars3 from "../../assets/images/backgrounds/stars-3.svg";
@@ -30,6 +31,7 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import customer from "../../assets/images/customer.webp";
 import eye1 from "../../assets/images/backgrounds/eye-1.svg";
 import eye2 from "../../assets/images/backgrounds/eye-2.svg";
+import Footer from "../../components/Footer";
 
 const slats = [
   {
@@ -216,14 +218,14 @@ const HomePage = () => {
                 <div className="flex flex-col w-full xl:gap-6 items-center">
                   <div className="w-full flex justify-center relative">
                     <img src={star} alt="" className="absolute right-10" />
-                    <h2 className="font-ibmplexsans-regular text-primary-3 font-bold xl:text-[2rem]">
+                    <h2 className=" text-primary-3 font-bold xl:text-[2rem]">
                       MAP FOR SUCCESS
                     </h2>
                   </div>
                   <h2 className="text-[28px] font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-5 bg-clip-text">
                     Cùng
                   </h2>
-                  <h2 className="font-ibmplexsans-regular text-primary-3 font-bold xl:text-[2rem]">
+                  <h2 className=" text-primary-3 font-bold xl:text-[2rem]">
                     Ms. Nguyễn Bảo Thoa
                   </h2>
                 </div>
@@ -231,7 +233,7 @@ const HomePage = () => {
                   <img src={star3} alt="" className="absolute -left-10" />
                   <div className="h-10 w-[1.5px] bg-gradient-to-b from-white to-primary-4 xl:my-3"></div>
                 </div>
-                <div className="xl:mb-12 flex flex-col items-center xl:text-base text-white font-ibmplexsans-regular font-medium xl:gap-[10px]">
+                <div className="xl:mb-12 flex flex-col items-center xl:text-base text-white  font-medium xl:gap-[10px]">
                   <span>Nhà đào tạo, chuyên gia Coaching</span>
                   <span>
                     GĐCC tại Gein Academy - Học viện Lifecoach Quốc tế
@@ -243,7 +245,7 @@ const HomePage = () => {
                     alt=""
                     className="absolute right-0 z-10 -top-[35%]"
                   />
-                  <button className="shadow-shadow-1 xl:w-72 text-white xl:text-xl font-ibmplexsans-regular font-medium bg-linear-1 xl:h-12 rounded-[100px] border-[0.5px] border-white backdrop-blur-lg">
+                  <button className="shadow-shadow-1 xl:w-72 text-white xl:text-xl  font-medium bg-linear-1 xl:h-12 rounded-[100px] border-[0.5px] border-white backdrop-blur-lg">
                     Đăng kí ngay
                   </button>
                 </div>
@@ -260,21 +262,21 @@ const HomePage = () => {
         </div>
         <div className="flex flex-col w-full gap-3 items-center">
           <div className="w-full flex justify-center relative">
-            <h2 className="font-ibmplexsans-regular text-primary-3 font-semibold tracking-wide text-xl">
+            <h2 className=" text-primary-3 font-semibold tracking-wide text-xl">
               MAP FOR SUCCESS
             </h2>
           </div>
           <h2 className="text-base font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-5 bg-clip-text">
             Cùng
           </h2>
-          <h2 className="font-ibmplexsans-regular text-primary-3 font-semibold tracking-wide text-xl">
+          <h2 className=" text-primary-3 font-semibold tracking-wide text-xl">
             Ms. Nguyễn Bảo Thoa
           </h2>
         </div>
         <div className="w-full flex justify-center relative">
           <div className="h-[1px] w-20 bg-gradient-to-r from-white to-primary-4 xl:my-3"></div>
         </div>
-        <div className="flex flex-col items-center text-sm text-white font-ibmplexsans-regular font-medium gap-1">
+        <div className="flex flex-col items-center text-sm text-white  font-medium gap-1">
           <span>Nhà đào tạo, chuyên gia Coaching</span>
           <span>GĐCC tại Gein Academy - Học viện Lifecoach Quốc tế</span>
         </div>
@@ -284,7 +286,7 @@ const HomePage = () => {
             alt=""
             className="absolute -right-0 z-10 -top-[27.43%]"
           />
-          <button className="py-2 px-9 text-white text-base font-medium font-ibmplexsans-regular bg-linear-1 rounded-[100px] border-[0.5px] border-white backdrop-blur-lg">
+          <button className="py-2 px-9 text-white text-base font-medium  bg-linear-1 rounded-[100px] border-[0.5px] border-white backdrop-blur-lg">
             Đăng kí ngay
           </button>
         </div>
@@ -303,11 +305,11 @@ const HomePage = () => {
                   alt=""
                   className="w-8 h-8 xl:w-[60px] xl:h-[60px]"
                 />
-                <p className="font-ibmplexsans-regular font-bold text-xl xl:text-4xl xl:ml-[9px]">
+                <p className=" font-bold text-xl xl:text-4xl xl:ml-[9px]">
                   {item.slat}
                 </p>
               </div>
-              <p className="font-ibmplexsans-regular text-sm xl:text-base text-white text-center px-3 xl:px-0">
+              <p className=" text-sm xl:text-base text-white text-center px-3 xl:px-0">
                 {item.content}
               </p>
             </div>
@@ -357,7 +359,7 @@ const HomePage = () => {
                       <div className="flex flex-col w-full gap-1 xl:gap-3">
                         <label
                           htmlFor=""
-                          className="text-sm xl:text-xl font-ibmplexsans-regular font-medium text-white"
+                          className="text-sm xl:text-xl  font-medium text-white"
                         >
                           Họ và tên khai sinh
                         </label>
@@ -370,7 +372,7 @@ const HomePage = () => {
                       <div className="flex flex-col w-full gap-1 xl:gap-3">
                         <label
                           htmlFor=""
-                          className="text-sm xl:text-xl font-ibmplexsans-regular font-medium text-white"
+                          className="text-sm xl:text-xl  font-medium text-white"
                         >
                           Chọn giới tính
                         </label>
@@ -411,7 +413,7 @@ const HomePage = () => {
                       <div className="flex flex-col w-full gap-1 xl:gap-3">
                         <label
                           htmlFor=""
-                          className="xl:text-xl font-ibmplexsans-regular font-medium text-white"
+                          className="xl:text-xl  font-medium text-white"
                         >
                           Ngày, tháng, năm sinh dương lịch
                         </label>
@@ -501,7 +503,7 @@ const HomePage = () => {
                         >
                           <div className="w-4 h-4 border-gradient-radius relative"></div>
                         </div>
-                        <span className="font-ibmplexsans-regular text-sm xl:text-base text-white">
+                        <span className=" text-sm xl:text-base text-white">
                           Xem cả đường tình duyên, hôn nhân
                         </span>
                       </div>
@@ -516,21 +518,21 @@ const HomePage = () => {
                         >
                           <div className="w-4 h-4 border-gradient-radius relative"></div>
                         </div>
-                        <span className="font-ibmplexsans-regular text-sm xl:text-base text-white">
+                        <span className=" text-sm xl:text-base text-white">
                           Xem số điện thoại hợp
                         </span>
                       </div>
                     </div>
                     <div className="xl:flex hidden w-full justify-center">
-                      <button className="xl:w-72 text-white xl:text-xl font-ibmplexsans-regular font-medium bg-linear-1 xl:h-12 rounded-[100px] border-[0.5px] border-white backdrop-blur-lg">
+                      <button className="xl:w-72 text-white xl:text-xl  font-medium bg-linear-1 xl:h-12 rounded-[100px] border-[0.5px] border-white backdrop-blur-lg">
                         Tra cứu
                       </button>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="flex xl:hidden w-full justify-center">
-                <button className="text-white px-12 py-2 text-base font-ibmplexsans-regular font-medium bg-linear-1 rounded-[100px] border-[0.5px] border-white backdrop-blur-lg">
+              <div className="flex xl:hidden w-full justify-center relative z-10">
+                <button className="text-white px-12 py-2 text-base  font-medium bg-linear-1 rounded-[100px] border-[0.5px] border-white backdrop-blur-lg">
                   Tra cứu
                 </button>
               </div>
@@ -539,26 +541,27 @@ const HomePage = () => {
         </div>
       </div>
       <div className="relative bg-primary">
-        <div className="absolute inset-0 bg-[#233269] mix-blend-overlay z-10"></div>
-        <div className="absolute inset-0 bg-galaxy filter brightness-75 mix-blend-exclusion"></div>
-        <div className="w-full relative z-10">
-          <div className="container flex flex-col xl:gap-16 xl:py-16">
-            <div className="w-full flex justify-center absolute top-1/2 -translate-y-1/2 -translate-x-[10%]">
+        <div className="absolute inset-0 bg-[#233269] mix-blend-overlay z-10 hidden xl:block"></div>
+        <div className="absolute inset-0 bg-[#3C6E74] mix-blend-overlay z-10 xl:hidden"></div>
+        <div className={`absolute inset-0 z-20 xl:z-0 mix-blend-hard-light xl:mix-blend-normal filter xl:brightness-75 ${isMobileScreen ? "bg-galaxy-2 bg-no-repeat bg-cover" : "bg-galaxy"}`}></div>
+        <div className="w-full relative z-20 xl:z-10">
+          <div className="container flex flex-col gap-5 xl:gap-16 py-10 xl:py-16">
+            <div className="hidden w-full xl:flex justify-center absolute top-1/2 -translate-y-1/2 -translate-x-[10%]">
               <div className="xl:w-[736px] xl:h-[736px]">
                 <img src={moon} alt="" />
               </div>
             </div>
 
-            <div className="flex relative">
-              <div className="flex flex-col flex-1 justify-end xl:pr-[100px] xl:gap-10">
+            <div className="flex flex-col-reverse xl:flex-row relative gap-5 xl:gap-0">
+              <div className="flex flex-col flex-1 justify-end xl:pr-[100px] gap-2 xl:gap-10">
                 <div className="flex flex-col items-center gap-1 xl:gap-2">
-                  <h1 className="text-xl leading-10 xl:text-[28px] font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
+                  <h1 className="xl:leading-10 text-base xl:text-[28px] font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
                     Bạn có từng cảm thấy
                   </h1>
-                  <div className="w-[45%] bg-gradient-to-r from-white to-primary-6 h-[1px]"></div>
+                  <div className="w-[20%] xl:w-[45%] bg-gradient-to-r from-white to-primary-6 h-[1px]"></div>
                 </div>
-                <div className="">
-                  <ul className="font-ibmplexsans-regular xl:text-base text-white list-disc">
+                <div className="pl-6 pr-5 xl:px-0">
+                  <ul className="text-sm xl:text-base text-white list-disc">
                     <li>
                       Mông lung, mất định hướng trong công việc, sự nghiệp không
                       phát triển.
@@ -584,33 +587,33 @@ const HomePage = () => {
                   </ul>
                 </div>
               </div>
-              <div className="relative flex-[1.3] xl:h-[400px] rounded-[20px] overflow-hidden">
+              <div className="relative xl:flex-[1.3] h-[233px] xl:h-[400px] rounded-[20px] overflow-hidden">
                 <img
                   src={tired1}
                   alt=""
                   className="absolute w-full h-full object-cover"
                 />
-                <div className="border-gradient-radius-2 absolute inset-0"></div>
+                <div className="border-gradient-radius-2 absolute inset-0 hidden xl:block"></div>
               </div>
             </div>
-            <div className="flex relative">
-              <div className="relative flex-[1.3] xl:h-[400px] rounded-[20px] overflow-hidden">
+            <div className="flex flex-col xl:flex-row relative gap-5 xl:gap-0">
+              <div className="relative xl:flex-[1.3] h-[233px] xl:h-[400px] rounded-[20px] overflow-hidden">
                 <img
                   src={tired2}
                   alt=""
                   className="absolute w-full h-full object-cover"
                 />
-                <div className="border-gradient-radius-2 absolute inset-0"></div>
+                <div className="border-gradient-radius-2 absolute inset-0 hidden xl:block"></div>
               </div>
-              <div className="flex flex-col flex-1 justify-center xl:pl-[100px] xl:gap-10">
+              <div className="flex flex-col flex-1 justify-center xl:pl-[100px] gap-2 xl:gap-10">
                 <div className="flex flex-col items-center gap-1 xl:gap-2">
-                  <h1 className="text-xl text-center xl:px-16 leading-10 xl:text-[28px] font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
+                  <h1 className="text-base text-center xl:px-16 xl:leading-10 xl:text-[28px] font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
                     Hoặc đang làm quản lý, lãnh đạo nhưng
                   </h1>
-                  <div className="w-[45%] bg-gradient-to-r from-white to-primary-6 h-[1px]"></div>
+                  <div className="w-[20%] xl:w-[45%] bg-gradient-to-r from-white to-primary-6 h-[1px]"></div>
                 </div>
-                <div className="">
-                  <ul className="font-ibmplexsans-regular xl:text-base text-white list-disc">
+                <div className="pl-6 pr-5 xl:px-0">
+                  <ul className="text-sm xl:text-base text-white list-disc">
                     <li>
                       Gặp vấn đề về nhân sự, không thấu hiểu nhân viên, không
                       biết sắp xếp nhân sự đúng sở trường, đúng năng lực, đúng
@@ -629,16 +632,16 @@ const HomePage = () => {
                 </div>
               </div>
             </div>
-            <div className="flex relative">
-              <div className="flex flex-col flex-1 justify-end xl:pr-[100px] xl:gap-10">
+            <div className="flex flex-col-reverse xl:flex-row relative gap-5 xl:gap-0">
+              <div className="flex flex-col flex-1 justify-end xl:pr-[100px] gap-2 xl:gap-10">
                 <div className="flex flex-col items-center gap-1 xl:gap-2">
-                  <h1 className="text-xl text-center px-6 leading-10 xl:text-[28px] font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
+                  <h1 className="text-base text-center xl:px-6 xl:leading-10 xl:text-[28px] font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
                     Gặp trục trặc trong cuộc sống hôn nhân
                   </h1>
-                  <div className="w-[45%] bg-gradient-to-r from-white to-primary-6 h-[1px]"></div>
+                  <div className="w-[20%] xl:w-[45%] bg-gradient-to-r from-white to-primary-6 h-[1px]"></div>
                 </div>
-                <div className="">
-                  <ul className="font-ibmplexsans-regular xl:text-base text-white list-disc">
+                <div className="pl-6 pr-5 xl:px-0">
+                  <ul className="text-sm xl:text-base text-white list-disc">
                     <li>
                       Không hiểu nhau, lắng nghe không đúng cách hoặc né tránh
                       các cuộc trò chuyện quan trọng.
@@ -661,18 +664,18 @@ const HomePage = () => {
                   </ul>
                 </div>
               </div>
-              <div className="relative flex-[1.3] xl:h-[400px] rounded-[20px] overflow-hidden">
+              <div className="relative xl:flex-[1.3] h-[233px] xl:h-[400px] rounded-[20px] overflow-hidden">
                 <img
                   src={tired3}
                   alt=""
                   className="absolute w-full h-full object-cover"
                 />
-                <div className="border-gradient-radius-2 absolute inset-0"></div>
+                <div className="border-gradient-radius-2 absolute inset-0 hidden xl:block"></div>
               </div>
             </div>
           </div>
         </div>
-        <div className="relative flex flex-col gap-6 z-10">
+        <div className="relative xl:flex flex-col gap-6 z-20 xl:z-10 hidden">
           <div className="w-full flex justify-between items-center">
             <img src={zodiacLeft} alt="" />
             <img src={oldMan} alt="" />
@@ -687,56 +690,91 @@ const HomePage = () => {
             </h1>
           </div>
         </div>
+        <div className="flex flex-col gap-5 relative z-20 xl:z-10 xl:hidden container">
+          <div className="flex items-center">
+            <div className="flex-1 pr-7 pb-14">
+              <h1 className="flex-1 text-base font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
+                Nếu bạn đang gặp các vấn đề trên mà chưa tìm được cách giải
+                quyết
+              </h1>
+            </div>
+            <div className="flex-1">
+              <img src={oldMan2} alt="" className="object-cover w-full" />
+            </div>
+          </div>
+          <div className="flex flex-col gap-3">
+            <div className="px-14">
+              <h1 className="text-base w-full text-center font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
+                Thì giải pháp cho bạn chính là tấm bản đồ thành công
+              </h1>
+            </div>
+            <div className="flex gap-1.5 items-center">
+              <div className="h-[1px] bg-gradient-to-r from-white to-primary-6 flex-1"></div>
+              <h1 className="font-semibold text-base text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
+                MAP FOR SUCCESS
+              </h1>
+              <div className="h-[1px] bg-gradient-to-r from-white to-primary-6 flex-1"></div>
+            </div>
+          </div>
+        </div>
 
-        <div className="relative z-10 xl:py-16">
-          <div className="container flex flex-col xl:gap-12">
-            <div className="flex flex-col items-center gap-1 xl:gap-2">
+        <div className="relative z-20 xl:z-10 py-10 xl:py-16">
+          <div className="container flex flex-col gap-10 xl:gap-12">
+            <div className="flex flex-col items-center xl:gap-2">
               <h1 className="text-xl xl:text-[2rem] leading-10 font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
                 Thông tin các gói Coaching
               </h1>
-              <div className="w-[15%] bg-gradient-to-r from-white to-primary-6 h-[1px]"></div>
+              <div className="w-[25%] xl:w-[15%] bg-gradient-to-r from-white to-primary-6 h-[1px]"></div>
             </div>
-            <div className="flex xl:gap-6">
+            <div className="flex flex-col xl:flex-row xl:gap-6">
               {packages.map((item, index) => {
                 return (
-                  <div key={index} className="relative w-[376px] h-[518px]">
+                  <div
+                    key={index}
+                    className="relative w-[350px] xl:w-[376px] h-[480px] xl:h-[518px]"
+                  >
                     <div className="absolute inset-0">
                       <img
                         src={bgPackage}
                         alt=""
                         className="absolute inset-0 z-10"
                       />
-                      <div className="w-full absolute bottom-0 flex justify-center z-10">
-                        <button className="py-2 px-12 text-white xl:-translate-y-1 2xl:translate-y-2 text-base font-medium font-ibmplexsans-regular bg-linear-1 rounded-[100px] backdrop-blur-lg">
+                      <div className="w-full absolute bottom-0 xl:flex justify-center z-10 hidden">
+                        <button className="py-2 px-12 text-white xl:-translate-y-1 2xl:translate-y-2 text-base font-medium  bg-linear-1 rounded-[100px] backdrop-blur-lg">
                           Đăng kí ngay
                         </button>
                       </div>
                     </div>
                     <div className="flex flex-col relative w-full h-full">
                       <div className="flex items-center justify-center h-20 w-full">
-                        <h1 className="font-prata-regular xl:text-2xl text-white">
+                        <h1 className="font-prata-regular text-base xl:text-2xl text-white">
                           {item.name}
                         </h1>
                       </div>
-                      <div className="pt-8 pl-12 pr-6 w-full flex-1">
-                        <ul className="list-disc text-white font-ibmplexsans-regular font-medium text-base">
+                      <div className="xl:pt-8 pl-12 pr-6 w-full xl:flex-1">
+                        <ul className="list-disc text-white  font-medium text-sm xl:text-base">
                           {item.info.map((childItem, childIndex) => {
                             return <li key={childIndex}>{childItem}</li>;
                           })}
                         </ul>
                       </div>
-                      <div className="flex-col flex w-full items-center gap-2 pb-16">
+                      <div className="flex-col flex w-full items-center gap-1 xl:gap-2 xl:pb-16">
                         <div className="space-x-1">
-                          <span className="text-[#D9D9D9] text-base font-prata-regular line-through">
+                          <span className="text-[#D9D9D9] text-sm xl:text-base font-prata-regular line-through">
                             {item.priceDisplay.toLocaleString("vi-VN") + "đ"}
                           </span>
-                          <span className="text-2xl font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
+                          <span className="text-base xl:text-2xl font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
                             {item.price.toLocaleString("vi-VN") + "đ"}
                           </span>
                         </div>
-                        <span className="font-ibmplexsans-regular text-base text-white font-medium">
+                        <span className="text-sm xl:text-base text-white font-medium">
                           Ưu đãi sẽ hết sau 12:30:30{" "}
                         </span>
+                      </div>
+                      <div className="w-full flex justify-center z-10 xl:hidden">
+                        <button className="py-2 px-12 text-white xl:-translate-y-1 2xl:translate-y-2 text-base font-medium  bg-linear-1 rounded-[100px] backdrop-blur-lg">
+                          Đăng kí ngay
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -751,7 +789,7 @@ const HomePage = () => {
         <div className="absolute inset-0 bg-linear-3 z-10"></div>
         <img src={stars1} alt="" className="absolute top-0 left-0 z-10" />
         <div className="flex relative z-10 container">
-          <div className="flex gap-24 w-full">
+          <div className="flex flex-col xl:flex-row gap-24 w-full">
             <div className="flex flex-col xl:gap-10 pt-16 flex-1">
               <div className="flex flex-col gap-1 xl:gap-2">
                 <h1 className="text-xl leading-10 xl:text-[2rem] font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
@@ -805,7 +843,7 @@ const HomePage = () => {
                               {item.name}
                             </span>
                           </div>
-                          <p className="text-base font-ibmplexsans-regular leading-6 text-white">
+                          <p className="text-base  leading-6 text-white">
                             {item.text}
                           </p>
                         </div>
@@ -817,7 +855,7 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        <div className="relative">
+        {/* <div className="relative pb-32">
           <img src={stars2} alt="" className="absolute top-0 left-0 z-10" />
           <img src={stars3} alt="" className="absolute top-0 right-0 z-10" />
           <img
@@ -852,7 +890,7 @@ const HomePage = () => {
                             }
                             className="cursor-pointer transition-all duration-500 flex gap-5 items-center relative"
                           >
-                            <span className="text-base xl:text-xl text-white font-ibmplexsans-regular font-medium">
+                            <span className="text-base xl:text-xl text-white  font-medium">
                               {item.title}
                             </span>
                             <img
@@ -870,7 +908,7 @@ const HomePage = () => {
                                 : "max-h-0"
                             }`}
                           >
-                            <p className=" text-sm xl:text-base font-ibmplexsans-regular text-white pb-2">
+                            <p className=" text-sm xl:text-base  text-white pb-2">
                               {item.answer}
                             </p>
                           </div>
@@ -883,7 +921,8 @@ const HomePage = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
+        {/* <Footer /> */}
       </div>
     </>
   );
