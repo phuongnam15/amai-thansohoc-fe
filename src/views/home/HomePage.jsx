@@ -595,7 +595,7 @@ const HomePage = () => {
                   <div className="w-[20%] xl:w-[45%] bg-gradient-to-r from-white to-primary-6 h-[1px]"></div>
                 </div>
                 <div className="pl-6 pr-5 xl:px-0">
-                  <ul className="text-sm xl:text-base text-white list-disc">
+                  <ul className="text-sm xl:text-base text-white list-disc marker:text-[12px]">
                     <li>
                       Mông lung, mất định hướng trong công việc, sự nghiệp không
                       phát triển.
@@ -647,7 +647,7 @@ const HomePage = () => {
                   <div className="w-[20%] xl:w-[45%] bg-gradient-to-r from-white to-primary-6 h-[1px]"></div>
                 </div>
                 <div className="pl-6 pr-5 xl:px-0">
-                  <ul className="text-sm xl:text-base text-white list-disc">
+                  <ul className="text-sm xl:text-base text-white list-disc marker:text-[12px]">
                     <li>
                       Gặp vấn đề về nhân sự, không thấu hiểu nhân viên, không
                       biết sắp xếp nhân sự đúng sở trường, đúng năng lực, đúng
@@ -675,7 +675,7 @@ const HomePage = () => {
                   <div className="w-[20%] xl:w-[45%] bg-gradient-to-r from-white to-primary-6 h-[1px]"></div>
                 </div>
                 <div className="pl-6 pr-5 xl:px-0">
-                  <ul className="text-sm xl:text-base text-white list-disc">
+                  <ul className="text-sm xl:text-base text-white list-disc marker:text-[12px]">
                     <li>
                       Không hiểu nhau, lắng nghe không đúng cách hoặc né tránh
                       các cuộc trò chuyện quan trọng.
@@ -788,7 +788,7 @@ const HomePage = () => {
                       </div>
                       <div className="flex flex-col gap-7 py-5 xl:gap-0 xl:py-0 xl:h-full">
                         <div className="xl:pt-8 pl-12 pr-6 w-full xl:flex-1">
-                          <ul className="list-disc text-white  font-medium text-sm xl:text-base">
+                          <ul className="list-disc marker:text-[12px] text-white  font-medium text-sm xl:text-base">
                             {item.info.map((childItem, childIndex) => {
                               return <li key={childIndex}>{childItem}</li>;
                             })}
