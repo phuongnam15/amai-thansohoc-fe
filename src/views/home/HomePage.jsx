@@ -367,7 +367,7 @@ const HomePage = () => {
               className="mix-blend-soft-light relative z-10 filter brightness-95 h-full xl:h-auto object-cover xl:object-fill"
             />
           </div>
-          <div className="absolute inset-0 xl:py-16">
+          <div className="absolute inset-0 xl:py-16 xl:mix-blend-plus-lighter">
             <div className="container flex flex-col items-center justify-center gap-3 xl:gap-11 h-full">
               <div className="flex flex-col items-center gap-1 xl:gap-2">
                 <h1 className="text-xl leading-10 xl:text-[2rem] font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
@@ -375,23 +375,15 @@ const HomePage = () => {
                 </h1>
                 <div className="w-[45%] bg-gradient-to-r from-white to-primary-6 h-[1px]"></div>
               </div>
-              <div className="relative w-full max-h-[444px]">
-                {isMobileScreen ? (
-                  <div className="absolute -inset-y-5 -inset-x-2">
-                    <img
-                      src={gradientBlurRadiusBorderMb}
-                      alt=""
-                      className="w-full h-full absolute"
-                    />
-                  </div>
-                ) : (
-                  <img
-                    src={gradientBlurRadiusBorder}
-                    alt=""
-                    className="w-full h-full absolute"
-                  />
-                )}
-                <div className="relative z-10 w-full h-full p-5 xl:px-24 xl:pt-16 xl:pb-12">
+              <div className="relative w-full h-[360px] xl:h-[444px]">
+                <div
+                  className="relative w-full h-full"
+                  style={{ filter: "blur(3px)" }}
+                >
+                  <div className="absolute z-10 inset-0 p-5 xl:px-24 xl:pt-16 xl:pb-12 border-gradient-radius-3"></div>
+                  <div className="absolute inset-[2px] rounded-[32px] bg-gradient-to-b from-[rgba(217,217,217,0.20)] to-[rgba(115,115,115,0.20)]"></div>
+                </div>
+                <div className="absolute z-10 inset-0 p-5 xl:px-24 xl:pt-16 xl:pb-12">
                   <div className="flex flex-col gap-5 xl:gap-7 h-full">
                     <div className="flex flex-col xl:flex-row gap-5 xl:gap-6">
                       <div className="flex flex-col w-full gap-1 xl:gap-3">
