@@ -760,55 +760,58 @@ const HomePage = () => {
               </h1>
               <div className="w-[25%] xl:w-[15%] bg-gradient-to-r from-white to-primary-6 h-[1px]"></div>
             </div>
-            <div className="flex flex-col xl:flex-row xl:gap-6">
+            <div className="flex flex-col xl:flex-row gap-5 xl:gap-6">
               {packages.map((item, index) => {
                 return (
                   <div
                     key={index}
-                    className="relative w-[350px] xl:w-[376px] h-[480px] xl:h-[518px]"
+                    className="relative w-[350px] xl:w-[376px] h-auto xl:h-[518px]"
                   >
-                    <div className="absolute inset-0">
-                      <img
-                        src={bgPackage}
-                        alt=""
-                        className="absolute inset-0 z-10"
-                      />
-                      <div className="w-full absolute bottom-0 xl:flex justify-center z-10 hidden">
-                        <button className="py-2 px-12 text-white xl:-translate-y-1 2xl:translate-y-2 text-base font-medium  bg-linear-1 rounded-[100px] backdrop-blur-lg">
-                          Đăng kí ngay
-                        </button>
-                      </div>
+                    <div
+                      className="absolute xl:relative w-full h-full"
+                      style={{ filter: "blur(3px)" }}
+                    >
+                      <div className="absolute z-10 inset-0 p-5 xl:px-24 xl:pt-16 xl:pb-12 border-gradient-radius-3"></div>
                     </div>
-                    <div className="flex flex-col relative w-full h-full">
-                      <div className="flex items-center justify-center h-20 w-full">
+                    <div className="w-full absolute bottom-0 xl:flex justify-center z-10 hidden">
+                      <button className="py-2 px-12 text-white text-base font-medium translate-y-1/2 bg-linear-1 rounded-[100px] backdrop-blur-lg">
+                        Đăng kí ngay
+                      </button>
+                    </div>
+                    <div className="absolute inset-0 rounded-[32px] bg-gradient-to-b from-[rgba(255,255,255,0.3)] to-[rgba(115,203,213,0.3)]"></div>
+                    <div className="absolute inset-x-0 top-0 h-[48px] xl:h-[68px] rounded-t-[32px] bg-gradient-to-r from-[rgba(255,255,255,0.11)] to-[rgba(115,203,213,0.11)]"></div>
+                    <div className="flex flex-col inset-[2px] relative xl:absolute">
+                      <div className="flex items-center justify-center h-[48px] xl:h-[68px] w-full relative overflow-hidden flex-shrink-0">
                         <h1 className="font-prata-regular text-base xl:text-2xl text-white">
                           {item.name}
                         </h1>
                       </div>
-                      <div className="xl:pt-8 pl-12 pr-6 w-full xl:flex-1">
-                        <ul className="list-disc text-white  font-medium text-sm xl:text-base">
-                          {item.info.map((childItem, childIndex) => {
-                            return <li key={childIndex}>{childItem}</li>;
-                          })}
-                        </ul>
-                      </div>
-                      <div className="flex-col flex w-full items-center gap-1 xl:gap-2 xl:pb-16">
-                        <div className="space-x-1">
-                          <span className="text-[#D9D9D9] text-sm xl:text-base font-prata-regular line-through">
-                            {item.priceDisplay.toLocaleString("vi-VN") + "đ"}
-                          </span>
-                          <span className="text-base xl:text-2xl font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
-                            {item.price.toLocaleString("vi-VN") + "đ"}
+                      <div className="flex flex-col gap-7 py-5 xl:gap-0 xl:py-0 xl:h-full">
+                        <div className="xl:pt-8 pl-12 pr-6 w-full xl:flex-1">
+                          <ul className="list-disc text-white  font-medium text-sm xl:text-base">
+                            {item.info.map((childItem, childIndex) => {
+                              return <li key={childIndex}>{childItem}</li>;
+                            })}
+                          </ul>
+                        </div>
+                        <div className="flex-col flex w-full items-center gap-1 xl:gap-2 xl:pb-16">
+                          <div className="space-x-1">
+                            <span className="text-[#D9D9D9] text-sm xl:text-base font-prata-regular line-through">
+                              {item.priceDisplay.toLocaleString("vi-VN") + "đ"}
+                            </span>
+                            <span className="text-base xl:text-2xl font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
+                              {item.price.toLocaleString("vi-VN") + "đ"}
+                            </span>
+                          </div>
+                          <span className="text-sm xl:text-base text-white font-medium">
+                            Ưu đãi sẽ hết sau 12:30:30{" "}
                           </span>
                         </div>
-                        <span className="text-sm xl:text-base text-white font-medium">
-                          Ưu đãi sẽ hết sau 12:30:30{" "}
-                        </span>
-                      </div>
-                      <div className="w-full flex justify-center z-10 xl:hidden">
-                        <button className="py-2 px-12 text-white xl:-translate-y-1 2xl:translate-y-2 text-base font-medium  bg-linear-1 rounded-[100px] backdrop-blur-lg">
-                          Đăng kí ngay
-                        </button>
+                        <div className="w-full flex justify-center z-10 xl:hidden">
+                          <button className="py-2 px-12 text-white xl:-translate-y-1 2xl:translate-y-2 text-base font-medium  bg-linear-1 rounded-[100px] backdrop-blur-lg">
+                            Đăng kí ngay
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
