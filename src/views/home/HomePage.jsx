@@ -157,6 +157,8 @@ const HomePage = () => {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const isMobileScreen = useCheckMobileScreen();
   const [selectedQuestion, setSelectedQuestion] = useState(null);
+  const [startPosition, setStartPosition] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
 
   const days = Array.from({ length: 31 }, (_, i) => i + 1);
   const months = Array.from({ length: 12 }, (_, i) => `Tháng ${i + 1}`);
@@ -168,6 +170,42 @@ const HomePage = () => {
       if (newIndex >= feedbacks.length) return feedbacks.length - 1;
       return newIndex;
     });
+  };
+  const handleMouseDown = (e) => {
+    setStartPosition(e.clientX);
+    setIsDragging(true);
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    const diff = startPosition - e.clientX;
+    if (Math.abs(diff) > 50) {
+      // Nếu kéo đủ xa
+      moveSlide(diff > 0 ? 1 : -1);
+      setIsDragging(false);
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleTouchStart = (e) => {
+    setStartPosition(e.touches[0].clientX);
+    setIsDragging(true);
+  };
+
+  const handleTouchMove = (e) => {
+    if (!isDragging) return;
+    const diff = startPosition - e.touches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      moveSlide(diff > 0 ? 1 : -1);
+      setIsDragging(false);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
   };
 
   return (
@@ -543,7 +581,11 @@ const HomePage = () => {
       <div className="relative bg-primary">
         <div className="absolute inset-0 bg-[#233269] mix-blend-overlay z-10 hidden xl:block"></div>
         <div className="absolute inset-0 bg-[#3C6E74] mix-blend-overlay z-10 xl:hidden"></div>
-        <div className={`absolute inset-0 z-20 xl:z-0 mix-blend-hard-light xl:mix-blend-normal filter xl:brightness-75 ${isMobileScreen ? "bg-galaxy-2 bg-no-repeat bg-cover" : "bg-galaxy"}`}></div>
+        <div
+          className={`absolute inset-0 z-20 xl:z-0 mix-blend-hard-light xl:mix-blend-normal filter xl:brightness-75 ${
+            isMobileScreen ? "bg-galaxy-2 bg-no-repeat bg-cover" : "bg-galaxy"
+          }`}
+        ></div>
         <div className="w-full relative z-20 xl:z-10">
           <div className="container flex flex-col gap-5 xl:gap-16 py-10 xl:py-16">
             <div className="hidden w-full xl:flex justify-center absolute top-1/2 -translate-y-1/2 -translate-x-[10%]">
@@ -786,24 +828,35 @@ const HomePage = () => {
       </div>
 
       <div className="relative">
-        <div className="absolute inset-0 bg-linear-3 z-10"></div>
+        <div className="absolute inset-0 bg-linear-3 hidden xl:block z-10"></div>
         <img src={stars1} alt="" className="absolute top-0 left-0 z-10" />
         <div className="flex relative z-10 container">
-          <div className="flex flex-col xl:flex-row gap-24 w-full">
-            <div className="flex flex-col xl:gap-10 pt-16 flex-1">
+          <div className="flex flex-col xl:flex-row gap-5 xl:gap-24 w-full">
+            <div className="flex flex-col xl:gap-10 pt-10 xl:pt-16 xl:flex-1">
               <div className="flex flex-col gap-1 xl:gap-2">
-                <h1 className="text-xl leading-10 xl:text-[2rem] font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
+                <h1 className="text-xl xl:leading-10 xl:text-[2rem] font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
                   Khách hàng nói gì về
                 </h1>
-                <h1 className="text-xl leading-10 xl:text-[2rem] font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
+                <h1 className="text-xl xl:leading-10 xl:text-[2rem] font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
                   Map For Success
                 </h1>
                 <div className="w-[42%] bg-gradient-to-r from-white to-primary-6 h-[1px]"></div>
               </div>
-              <img src={feedback} alt="" />
+              <div className="w-full flex justify-end xl:justify-normal">
+                <img src={feedback} alt="" className="w-64 xl:w-auto" />
+              </div>
             </div>
-            <div className="flex-[1.5] h-full relative">
-              <div className="absolute top-1/2 -translate-y-1/2 w-[120%] left-1/2 -translate-x-1/2 flex justify-between">
+            <div
+              onMouseDown={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
+              onMouseLeave={handleMouseUp}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+              className="xl:flex-[1.5] xl:h-full relative h-[300px] cursor-pointer select-none"
+            >
+              <div className="absolute top-1/2 hidden -translate-y-1/2 w-[120%] left-1/2 -translate-x-1/2 xl:flex justify-between">
                 <div
                   onClick={() => moveSlide(-1)}
                   className="w-6 h-6 bg-gray-400 rounded-full flex justify-center items-center"
@@ -821,29 +874,31 @@ const HomePage = () => {
                 <div
                   className="flex absolute left-0 h-full transition-transform duration-300"
                   style={{
-                    transform: `translateX(-${currentSlideIndex * 376}px)`,
+                    transform: `translateX(-${
+                      currentSlideIndex * (isMobileScreen ? 259 : 376)
+                    }px)`,
                   }}
                 >
                   {feedbacks.map((item, index) => {
                     return (
                       <div
                         key={index}
-                        className="w-[376px] flex-shrink-0 flex items-center"
+                        className="w-[259px] xl:w-[376px] flex-shrink-0 flex items-center"
                       >
-                        <div className="flex flex-col xl:gap-8 pr-6">
-                          <div className="flex xl:gap-8 items-center">
-                            <div className="relative w-[120px] h-[120px] rounded-full overflow-hidden">
+                        <div className="flex flex-col gap-3 xl:gap-8 pr-6">
+                          <div className="flex gap-3 xl:gap-8 items-center">
+                            <div className="relative w-[60px] h-[60px] xl:w-[120px] xl:h-[120px] rounded-full overflow-hidden">
                               <img
                                 src={item.image}
                                 alt="customer"
                                 className="absolute inset-0"
                               />
                             </div>
-                            <span className="font-prata-regular xl:text-xl text-transparent bg-gradient-to-r from-white to-[#73CBD5] bg-clip-text">
+                            <span className="font-prata-regular text-base xl:text-xl text-transparent bg-gradient-to-r from-white to-[#73CBD5] bg-clip-text">
                               {item.name}
                             </span>
                           </div>
-                          <p className="text-base  leading-6 text-white">
+                          <p className="text-sm xl:text-base leading-6 text-white">
                             {item.text}
                           </p>
                         </div>
@@ -855,42 +910,42 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        {/* <div className="relative pb-32">
+        <div className="relative pb-16 xl:pb-32">
           <img src={stars2} alt="" className="absolute top-0 left-0 z-10" />
           <img src={stars3} alt="" className="absolute top-0 right-0 z-10" />
           <img
             src={eye1}
             alt=""
-            className="absolute top-1/2 -translate-y-1/3 left-0 z-10 mix-blend-color-dodge"
+            className="absolute top-[80%] xl:top-1/2 xl:-translate-y-1/3 left-0 z-10 mix-blend-color-dodge w-[80px] xl:w-auto"
           />
           <img
             src={eye2}
             alt=""
-            className="absolute top-[15%] right-0 z-10 mix-blend-color-dodge"
+            className="absolute -top-5 -right-5 xl:top-[15%] xl:right-0 z-10 mix-blend-color-dodge w-[80px] xl:w-auto"
           />
-          <div className="container relative z-10 py-12">
-            <div className="px-[76px] flex flex-col xl:gap-16">
+          <div className="container relative z-10 py-5 xl:py-12">
+            <div className="xl:px-[76px] flex flex-col gap-5 xl:gap-16">
               <div className="flex flex-col items-center gap-1 xl:gap-2">
-                <h1 className="text-xl leading-10 xl:text-[2rem] font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
+                <h1 className="text-xl xl:leading-10 xl:text-[2rem] font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
                   Giải đáp thắc mắc
                 </h1>
                 <div className="w-[18%] bg-gradient-to-r from-white to-primary-6 h-[1px]"></div>
               </div>
               <div className="relative">
-                <div className="w-full flex flex-col gap-4 xl:pl-16">
+                <div className="w-full flex flex-col gap-4">
                   {questions.map((item, index) => {
                     return (
                       <div className="flex flex-col">
-                        <div className="px-6 flex flex-col gap-5">
+                        <div className="px-6 flex flex-col gap-3 xl:gap-5">
                           <div
                             onClick={() =>
                               setSelectedQuestion(
                                 selectedQuestion === index ? null : index
                               )
                             }
-                            className="cursor-pointer transition-all duration-500 flex gap-5 items-center relative"
+                            className="cursor-pointer transition-all duration-500 flex gap-3 xl:gap-5 items-center relative"
                           >
-                            <span className="text-base xl:text-xl text-white  font-medium">
+                            <span className="text-base xl:text-xl text-white font-medium">
                               {item.title}
                             </span>
                             <img
@@ -904,16 +959,18 @@ const HomePage = () => {
                           <div
                             className={`overflow-hidden transition-all duration-500 ${
                               selectedQuestion === index
-                                ? "max-h-[200px]"
+                                ? "max-h-[200px] mb-2"
                                 : "max-h-0"
                             }`}
                           >
-                            <p className=" text-sm xl:text-base  text-white pb-2">
+                            <p className=" text-sm xl:text-base text-white">
                               {item.answer}
                             </p>
                           </div>
                         </div>
-                        <div className="w-full bg-gradient-to-r from-white to-primary-6 h-[1px]"></div>
+                        {index !== questions.length - 1 && (
+                          <div className="w-full bg-gradient-to-r from-white to-primary-6 h-[1px]"></div>
+                        )}
                       </div>
                     );
                   })}
@@ -921,8 +978,8 @@ const HomePage = () => {
               </div>
             </div>
           </div>
-        </div> */}
-        {/* <Footer /> */}
+        </div>
+        <Footer />
       </div>
     </>
   );
