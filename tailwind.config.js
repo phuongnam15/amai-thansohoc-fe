@@ -20,7 +20,9 @@ module.exports = {
       backgroundImage: {
         "galaxy-2": "url('/src/assets/images/backgrounds/galaxy-2.webp')",
         "blur-desktop": "url('/src/assets/images/backgrounds/BG.webp')",
+        "blur-desktop-2": "url('/src/assets/images/backgrounds/BG-2.webp')",
         "blur-mobile": "url('/src/assets/images/backgrounds/BG-mobile.svg')",
+        'custom-gradient': `linear-gradient(120deg, rgba(217, 217, 217, 0.20) 30.52%, rgba(115, 115, 115, 0.20) 69.48%)`,
         stars: "url('/src/assets/images/backgrounds/stars.svg')",
         "linear-1":
           "linear-gradient(0deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.10) 100%), linear-gradient(90deg, rgba(254, 255, 195, 0.80) 0%, rgba(115, 203, 213, 0.80) 50%, rgba(143, 92, 190, 0.80) 100%)",

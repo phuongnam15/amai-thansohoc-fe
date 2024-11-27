@@ -7,11 +7,11 @@ import arrowDown from "../../../assets/images/icons/arrow-down.svg";
 const menuItems = [
   {
     name: "Trang chủ",
-    href: "#",
+    href: "/",
   },
   {
     name: "Giới thiệu",
-    href: "#",
+    href: "/gioi-thieu",
   },
   {
     name: "Tra cứu",

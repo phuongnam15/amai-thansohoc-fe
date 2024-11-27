@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import introduceWomen from "../../assets/images/backgrounds/introduce-women.webp";
 import ancientCharacters from "../../assets/images/backgrounds/ancient-characters.webp";
 import solarSystem from "../../assets/images/backgrounds/solar-system.webp";
@@ -9,9 +9,6 @@ import star4 from "../../assets/images/icons/star-4.svg";
 import eyeStar from "../../assets/images/icons/eye-star.svg";
 import book from "../../assets/images/icons/book.svg";
 import hand from "../../assets/images/icons/hand.svg";
-import gradientBlurRadiusBorder from "../../assets/images/backgrounds/gradient-blur-radius-border.svg";
-import gradientBlurRadiusBorderMb from "../../assets/images/backgrounds/gradient-blur-radius-border-mb.svg";
-import bgPackage from "../../assets/images/backgrounds/bg-package.svg";
 import arrowDown2 from "../../assets/images/icons/arrow-down-2.svg";
 import introduce from "../../assets/images/backgrounds/introduce.webp";
 import useCheckMobileScreen from "../../utils/hooks/useCheckMobileScreen";
@@ -367,7 +364,7 @@ const HomePage = () => {
               className="mix-blend-soft-light relative z-10 filter brightness-95 h-full xl:h-auto object-cover xl:object-fill"
             />
           </div>
-          <div className="absolute inset-0 xl:py-16 xl:mix-blend-plus-lighter">
+          <div className="absolute inset-0 xl:py-16 z-10">
             <div className="container flex flex-col items-center justify-center gap-3 xl:gap-11 h-full">
               <div className="flex flex-col items-center gap-1 xl:gap-2">
                 <h1 className="text-xl leading-10 xl:text-[2rem] font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
@@ -380,7 +377,7 @@ const HomePage = () => {
                   className="relative w-full h-full"
                   style={{ filter: "blur(3px)" }}
                 >
-                  <div className="absolute z-10 inset-0 p-5 xl:px-24 xl:pt-16 xl:pb-12 border-gradient-radius-3"></div>
+                  <div className="absolute z-10 inset-0 p-5 xl:px-24 xl:pt-16 xl:pb-12 border-2 border-gradient-radius-3 rounded-[32px]"></div>
                   <div className="absolute inset-[2px] rounded-[32px] bg-gradient-to-b from-[rgba(217,217,217,0.20)] to-[rgba(115,115,115,0.20)]"></div>
                 </div>
                 <div className="absolute z-10 inset-0 p-5 xl:px-24 xl:pt-16 xl:pb-12">
@@ -760,7 +757,7 @@ const HomePage = () => {
               </h1>
               <div className="w-[25%] xl:w-[15%] bg-gradient-to-r from-white to-primary-6 h-[1px]"></div>
             </div>
-            <div className="flex flex-col xl:flex-row gap-5 xl:gap-6">
+            <div className="flex flex-col items-center xl:flex-row gap-5 xl:gap-6">
               {packages.map((item, index) => {
                 return (
                   <div
@@ -771,7 +768,7 @@ const HomePage = () => {
                       className="absolute xl:relative w-full h-full"
                       style={{ filter: "blur(3px)" }}
                     >
-                      <div className="absolute z-10 inset-0 p-5 xl:px-24 xl:pt-16 xl:pb-12 border-gradient-radius-3"></div>
+                      <div className="absolute z-10 inset-0 p-5 xl:px-24 xl:pt-16 xl:pb-12 border-2 border-gradient-radius-3 rounded-[32px]"></div>
                     </div>
                     <div className="w-full absolute bottom-0 xl:flex justify-center z-10 hidden">
                       <button className="py-2 px-12 text-white text-base font-medium translate-y-1/2 bg-linear-1 rounded-[100px] backdrop-blur-lg">
