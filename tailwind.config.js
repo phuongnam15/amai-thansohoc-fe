@@ -22,6 +22,7 @@ module.exports = {
         "blur-desktop": "url('/src/assets/images/backgrounds/BG.webp')",
         "blur-desktop-2": "url('/src/assets/images/backgrounds/BG-2.webp')",
         "blur-mobile": "url('/src/assets/images/backgrounds/BG-mobile.svg')",
+        "blur-mobile-about": "url('/src/assets/images/backgrounds/BG-mobile-about.webp')",
         'custom-gradient': `linear-gradient(120deg, rgba(217, 217, 217, 0.20) 30.52%, rgba(115, 115, 115, 0.20) 69.48%)`,
         stars: "url('/src/assets/images/backgrounds/stars.svg')",
         "linear-1":

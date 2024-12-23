@@ -12,7 +12,11 @@ const Background = () => {
         }`}
       >
         <div
-          className={`absolute inset-0 bg-blur-mobile ${
+          className={`absolute inset-0 ${
+            pathname === "/" || pathname === "/trang-chu"
+              ? "bg-blur-mobile"
+              : "bg-blur-mobile-about"
+          }  ${
             pathname === "/" || pathname === "/trang-chu"
               ? "xl:bg-blur-desktop"
               : "xl:bg-blur-desktop-2"
