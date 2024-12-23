@@ -15,7 +15,7 @@ const menuItems = [
   },
   {
     name: "Tra cứu",
-    href: "#",
+    href: "/tra-cuu",
   },
   {
     name: "Dịch vụ",
@@ -50,7 +50,7 @@ const menuItems = [
       { name: "Quên mật khẩu", href: "" },
       { name: "Lịch sử tra cứu", href: "" },
       { name: "Đăng xuất", href: "" },
-     
+
     ],
   },
 ];
@@ -116,11 +116,10 @@ const Header = () => {
                       <a
                         key={childIndex}
                         href={child.href}
-                        className={`items-center py-[6px] text-white tracking-wide font-ibmplexsans-regular ${
-                          childIndex === 0
+                        className={`items-center py-[6px] text-white tracking-wide font-ibmplexsans-regular ${childIndex === 0
                             ? ""
                             : "border-t-[0.5px] border-white border-opacity-25"
-                        }`}
+                          }`}
                       >
                         {child.name}
                       </a>
@@ -147,19 +146,17 @@ const Header = () => {
               </span>
             </div>
             <div
-              className={`backdrop-blur-sm flex flex-col absolute top-6 -left-24 right-0 text-sm mt-2 bg-gradient-to-r from-[#FFFFFF4D] to-[#73CBD54D] shadow-lg p-5 z-10 rounded-xl ${
-                !isAccoutDrop && "hidden"
-              }`}
+              className={`backdrop-blur-sm flex flex-col absolute top-6 -left-24 right-0 text-sm mt-2 bg-gradient-to-r from-[#FFFFFF4D] to-[#73CBD54D] shadow-lg p-5 z-10 rounded-xl ${!isAccoutDrop && "hidden"
+                }`}
             >
               {accoutArray.map((child, childIndex) => (
                 <a
                   key={childIndex}
                   href={child.href}
-                  className={`items-center py-[6px] text-white tracking-wide font-ibmplexsans-regular ${
-                    childIndex === 0
+                  className={`items-center py-[6px] text-white tracking-wide font-ibmplexsans-regular ${childIndex === 0
                       ? ""
                       : "border-t-[0.5px] border-white border-opacity-25"
-                  }`}
+                    }`}
                 >
                   {child.name}
                 </a>
