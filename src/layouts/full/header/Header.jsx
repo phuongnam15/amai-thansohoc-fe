@@ -117,8 +117,8 @@ const Header = () => {
                         key={childIndex}
                         href={child.href}
                         className={`items-center py-[6px] text-white tracking-wide font-ibmplexsans-regular ${childIndex === 0
-                            ? ""
-                            : "border-t-[0.5px] border-white border-opacity-25"
+                          ? ""
+                          : "border-t-[0.5px] border-white border-opacity-25"
                           }`}
                       >
                         {child.name}
@@ -154,8 +154,8 @@ const Header = () => {
                   key={childIndex}
                   href={child.href}
                   className={`items-center py-[6px] text-white tracking-wide font-ibmplexsans-regular ${childIndex === 0
-                      ? ""
-                      : "border-t-[0.5px] border-white border-opacity-25"
+                    ? ""
+                    : "border-t-[0.5px] border-white border-opacity-25"
                     }`}
                 >
                   {child.name}

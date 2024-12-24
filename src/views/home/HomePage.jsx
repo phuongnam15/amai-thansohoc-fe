@@ -215,8 +215,8 @@ const HomePage = () => {
             style={
               isMobileScreen
                 ? {
-                    objectPosition: "55% center",
-                  }
+                  objectPosition: "55% center",
+                }
                 : undefined
             }
             className="mix-blend-color-dodge relative z-10 filter brightness-95 h-full xl:h-auto object-cover xl:object-fill"
@@ -353,7 +353,7 @@ const HomePage = () => {
       </div>
 
       <div className="flex justify-center items-center overflow-hidden pt-8 xl:pt-0">
-        <div className="relative">
+        <div className="relative w-full">
           <div className="h-[500px] xl:h-auto">
             <img
               src={ancientCharacters}
@@ -415,9 +415,8 @@ const HomePage = () => {
                           <img
                             src={arrowDown2}
                             alt=""
-                            className={`${
-                              selectedDrop === 0 ? "rotate-180" : ""
-                            } transition-transform duration-100 w-4 h-4 xl:w-auto xl:h-auto`}
+                            className={`${selectedDrop === 0 ? "rotate-180" : ""
+                              } transition-transform duration-100 w-4 h-4 xl:w-auto xl:h-auto`}
                           />
                           {selectedDrop === 0 && (
                             <div className="form-option z-10">
@@ -457,9 +456,8 @@ const HomePage = () => {
                             <img
                               src={arrowDown2}
                               alt=""
-                              className={`${
-                                selectedDrop === 1 ? "rotate-180" : ""
-                              } transition-transform duration-100 w-4 h-4 xl:w-auto xl:h-auto`}
+                              className={`${selectedDrop === 1 ? "rotate-180" : ""
+                                } transition-transform duration-100 w-4 h-4 xl:w-auto xl:h-auto`}
                             />
                             {selectedDrop === 1 && (
                               <div className="form-option overflow-hidden h-52 z-10">
@@ -490,9 +488,8 @@ const HomePage = () => {
                             <img
                               src={arrowDown2}
                               alt=""
-                              className={`${
-                                selectedDrop === 2 ? "rotate-180" : ""
-                              } transition-transform duration-100 w-4 h-4 xl:w-auto xl:h-auto`}
+                              className={`${selectedDrop === 2 ? "rotate-180" : ""
+                                } transition-transform duration-100 w-4 h-4 xl:w-auto xl:h-auto`}
                             />
                             {selectedDrop === 2 && (
                               <div className="form-option overflow-hidden h-52 z-10">
@@ -524,9 +521,8 @@ const HomePage = () => {
                       <div className="flex gap-3 items-center">
                         <div
                           onClick={() => setIsCheckLove(!isCheckLove)}
-                          className={`${
-                            isCheckLove && "bg-[#d9d9d9]"
-                          } rounded-full`}
+                          className={`${isCheckLove && "bg-[#d9d9d9]"
+                            } rounded-full`}
                         >
                           <div className="w-4 h-4 border-gradient-radius relative"></div>
                         </div>
@@ -539,9 +535,8 @@ const HomePage = () => {
                           onClick={() =>
                             setIsCheckAppropriatePhone(!isCheckAppropriatePhone)
                           }
-                          className={`${
-                            isCheckAppropriatePhone && "bg-[#d9d9d9]"
-                          } rounded-full`}
+                          className={`${isCheckAppropriatePhone && "bg-[#d9d9d9]"
+                            } rounded-full`}
                         >
                           <div className="w-4 h-4 border-gradient-radius relative"></div>
                         </div>
@@ -571,9 +566,8 @@ const HomePage = () => {
         <div className="absolute inset-0 bg-[#233269] mix-blend-overlay z-10 hidden xl:block"></div>
         <div className="absolute inset-0 bg-[#3C6E74] mix-blend-overlay z-10 xl:hidden"></div>
         <div
-          className={`absolute inset-0 z-20 xl:z-0 mix-blend-hard-light xl:mix-blend-normal filter xl:brightness-75 ${
-            isMobileScreen ? "bg-galaxy-2 bg-no-repeat bg-cover" : "bg-galaxy"
-          }`}
+          className={`absolute inset-0 z-20 xl:z-0 mix-blend-hard-light xl:mix-blend-normal filter xl:brightness-75 ${isMobileScreen ? "bg-galaxy-2 bg-no-repeat bg-cover" : "bg-galaxy"
+            }`}
         ></div>
         <div className="w-full relative z-20 xl:z-10">
           <div className="container flex flex-col gap-5 xl:gap-16 py-10 xl:py-16">
@@ -866,9 +860,8 @@ const HomePage = () => {
                 <div
                   className="flex absolute left-0 h-full transition-transform duration-300"
                   style={{
-                    transform: `translateX(-${
-                      currentSlideIndex * (isMobileScreen ? 259 : 376)
-                    }px)`,
+                    transform: `translateX(-${currentSlideIndex * (isMobileScreen ? 259 : 376)
+                      }px)`,
                   }}
                 >
                   {feedbacks.map((item, index) => {
@@ -943,17 +936,15 @@ const HomePage = () => {
                             <img
                               src={arrowDown2}
                               alt=""
-                              className={`text-2xl flex-shrink-0 ${
-                                selectedQuestion === index ? "rotate-180" : ""
-                              }`}
+                              className={`text-2xl flex-shrink-0 ${selectedQuestion === index ? "rotate-180" : ""
+                                }`}
                             />
                           </div>
                           <div
-                            className={`overflow-hidden transition-all duration-500 ${
-                              selectedQuestion === index
+                            className={`overflow-hidden transition-all duration-500 ${selectedQuestion === index
                                 ? "max-h-[200px] mb-2"
                                 : "max-h-0"
-                            }`}
+                              }`}
                           >
                             <p className=" text-sm xl:text-base text-white">
                               {item.answer}

@@ -1,6 +1,7 @@
 import Background from "../../components/Background";
 import Footer from "../../components/Footer";
 import Header from "./header/Header";
+import SearchPage from "../../views/search/SearchPage";
 import { Outlet, useLocation } from "react-router-dom";
 
 const FullLayout = () => {
