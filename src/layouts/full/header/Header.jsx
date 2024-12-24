@@ -117,13 +117,8 @@ const Header = () => {
                         key={childIndex}
                         href={child.href}
                         className={`items-center py-[6px] text-white tracking-wide font-ibmplexsans-regular ${childIndex === 0
-<<<<<<< HEAD
                           ? ""
                           : "border-t-[0.5px] border-white border-opacity-25"
-=======
-                            ? ""
-                            : "border-t-[0.5px] border-white border-opacity-25"
->>>>>>> 9c0e0fe078945427b4fd0ebad478536a78b4ffd9
                           }`}
                       >
                         {child.name}
@@ -159,13 +154,8 @@ const Header = () => {
                   key={childIndex}
                   href={child.href}
                   className={`items-center py-[6px] text-white tracking-wide font-ibmplexsans-regular ${childIndex === 0
-<<<<<<< HEAD
                     ? ""
                     : "border-t-[0.5px] border-white border-opacity-25"
-=======
-                      ? ""
-                      : "border-t-[0.5px] border-white border-opacity-25"
->>>>>>> 9c0e0fe078945427b4fd0ebad478536a78b4ffd9
                     }`}
                 >
                   {child.name}

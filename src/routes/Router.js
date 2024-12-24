@@ -7,10 +7,7 @@ const FullLayout = Loadable(lazy(() => import('../layouts/full/FullLayout')));
 const BlankLayout = Loadable(lazy(() => import('../layouts/blank/BlankLayout')));
 
 const HomePage = Loadable(lazy(() => import("../views/home/HomePage")));
-<<<<<<< HEAD
 const IntroducePage = Loadable(lazy(() => import("../views/introduce/IntroducePage")));
-=======
->>>>>>> 9c0e0fe078945427b4fd0ebad478536a78b4ffd9
 const SearchPage = Loadable(lazy(() => import("../views/search/SearchPage")));
 
 const Router = [
@@ -20,10 +17,7 @@ const Router = [
     children: [
       { path: '/', element: <Navigate to="/trang-chu" /> },
       { path: "/trang-chu", element: <HomePage /> },
-<<<<<<< HEAD
       { path: "/gioi-thieu", element: <IntroducePage /> },
-=======
->>>>>>> 9c0e0fe078945427b4fd0ebad478536a78b4ffd9
       { path: "/tra-cuu", element: <SearchPage /> }
     ],
   },
