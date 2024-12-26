@@ -33,30 +33,30 @@ const reasons = [
     title: "Cân bằng cảm xúc và cải thiện các mối quan hệ",
     content: [
       "Thần số học giúp hiểu về tính cách của người khác, từ đó cải thiện cách bạn giao tiếp và xử lý các tình huống trong mối quan hệ cá nhân hoặc công việc.",
-      "Nếu biết được số chủ đạo của đối tác, bạn có thể tìm ra cách hỗ trợ và đồng hành hiệu quả hơn."
+      "Nếu biết được số chủ đạo của đối tác, bạn có thể tìm ra cách hỗ trợ và đồng hành hiệu quả hơn.",
     ],
   },
   {
     title: "Hiểu về chu kỳ cuộc đời và dự đoán xu hướng tương lai",
     content: [
       "Thần số học phân tích chu kỳ 9 năm và các năm cá nhân của bạn để nhận biết giai đoạn nào là thuận lợi và thời điểm nào cần thận trọng.",
-      "Biết trước xu hướng giúp bạn lên kế hoạch phù hợp cho các dự định lớn trong tương lai."
+      "Biết trước xu hướng giúp bạn lên kế hoạch phù hợp cho các dự định lớn trong tương lai.",
     ],
   },
   {
     title: "Giúp đưa ra quyết định chính xác hơn",
     content: [
       "Thần số học có thể giúp bạn chọn tên phù hợp, ngày cưới, ngày khai trương, hay số nhà để tạo ra năng lượng tích cực.",
-      "Nhiều người còn dùng thần số học để đặt tên con hoặc chọn số liên quan đến các sự kiện quan trọng trong đời."
+      "Nhiều người còn dùng thần số học để đặt tên con hoặc chọn số liên quan đến các sự kiện quan trọng trong đời.",
     ],
   },
   {
     title: "Phát triển cá nhân và tâm linh",
     content: [
       "Thần số học không chỉ là công cụ khám phá bản thân mà còn giúp bạn hiểu rõ hành trình phát triển tâm linh của mình.",
-      "Nó khuyến khích sự tự nhận thức và kết nối sâu hơn với mục đích sống."
+      "Nó khuyến khích sự tự nhận thức và kết nối sâu hơn với mục đích sống.",
     ],
-  }
+  },
 ];
 
 const SearchPage = () => {
@@ -75,231 +75,246 @@ const SearchPage = () => {
   return (
     <>
       <div className="relative z-30 h-full w-full">
-        <div className="">
+        <div className="w-full relative pb-14 lg:pb-10">
           <img
             src={bgHeaderSearch}
             alt=""
-            className="absolute lg:h-auto lg:w-full object-cover"
+            className="absolute w-full h-full object-cover"
           />
-          <div className="items-center justify-center flex ">
-            <img
-              src={logoSearch}
-              alt=""
-              className="hidden lg:block pt-[120px] z-40"
-            />
-          </div>
+          <div className="container relative">
+            <div className="items-center justify-center flex">
+              <img
+                src={logoSearch}
+                alt=""
+                className="hidden lg:block pt-[120px] z-40"
+              />
+            </div>
 
-          <div className="flex justify-center items-center overflow-hidden pt-8 lg:pt-0 w-full">
-            <div className="relative w-full">
-              <div className="relative w-full lg:py-16 z-10">
-                <div className="container flex flex-col items-center justify-center mt-[50px] gap-3 lg:gap-11 h-full">
-                  <div className="flex flex-col items-center gap-1 lg:gap-2">
-                    <h1 className="text-xl leading-10 lg:text-[2rem] font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
-                      Tra cứu thần số học online
-                    </h1>
-                    <div className="w-[45%] bg-gradient-to-r from-white to-primary-6 h-[1px]"></div>
-                  </div>
-                  <div className="relative w-full h-[360px] lg:h-[444px]">
-                    <div
-                      className="relative w-full h-full"
-                      style={{ filter: "blur(3px)" }}
-                    >
-                      <div className="absolute z-10 inset-0 p-5 lg:px-24 lg:pt-16 lg:pb-12 border-2 border-gradient-radius-3 rounded-[32px]"></div>
-                      <div className="absolute inset-[2px] rounded-[32px] bg-gradient-to-b from-[rgba(217,217,217,0.20)] to-[rgba(115,115,115,0.20)]"></div>
+            <div className="flex justify-center items-center overflow-hidden pt-8 lg:pt-0 pb-10 w-full">
+              <div className="relative w-full">
+                <div className="relative w-full lg:py-16 z-10">
+                  <div className="flex flex-col items-center justify-center mt-0 lg:mt-[50px] gap-3 lg:gap-11 h-full">
+                    <div className="flex flex-col items-center gap-1 lg:gap-2">
+                      <h1 className="text-xl leading-10 lg:text-[2rem] font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text">
+                        Tra cứu thần số học online
+                      </h1>
+                      <div className="w-[45%] bg-gradient-to-r from-white to-primary-6 h-[1px]"></div>
                     </div>
-                    <div className="absolute z-10 inset-0 p-5 lg:px-24 lg:pt-16 lg:pb-12">
-                      <div className="flex flex-col gap-5 lg:gap-7 h-full">
-                        <div className="flex flex-col lg:flex-row gap-5 lg:gap-6">
-                          <div className="flex flex-col w-full gap-1 lg:gap-3">
-                            <label
-                              htmlFor=""
-                              className="text-sm lg:text-xl  font-medium text-white"
-                            >
-                              Họ và tên khai sinh
-                            </label>
-                            <input
-                              type="text"
-                              placeholder="Nhập họ và tên"
-                              className="form-input"
-                            />
-                          </div>
-                          <div className="flex flex-col w-full gap-1 lg:gap-3">
-                            <label
-                              htmlFor=""
-                              className="text-sm lg:text-xl  font-medium text-white"
-                            >
-                              Chọn giới tính
-                            </label>
-                            <div
-                              onClick={() =>
-                                setSelectedDrop(selectedDrop === 0 ? null : 0)
-                              }
-                              className="form-input flex justify-between items-center bg-white relative"
-                            >
-                              <span className="">
-                                {gender === 0 ? "Nam" : "Nữ"}
-                              </span>
-                              <img
-                                src={arrowDown2}
-                                alt=""
-                                className={`${selectedDrop === 0 ? "rotate-180" : ""
-                                  } transition-transform duration-100 w-4 h-4 lg:w-auto lg:h-auto`}
-                              />
-                              {selectedDrop === 0 && (
-                                <div className="form-option z-10">
-                                  {["Nam", "Nữ"].map((item, index) => {
-                                    return (
-                                      <span
-                                        onClick={() => setGender(index)}
-                                        className="px-4 cursor-pointer w-full py-2 hover:bg-primary hover:text-white lg:text-base text-sm"
-                                      >
-                                        {item}
-                                      </span>
-                                    );
-                                  })}
-                                </div>
-                              )}
-                            </div>
-                          </div>
-                        </div>
-                        <div className="flex gap-6">
-                          <div className="flex flex-col w-full gap-1 lg:gap-3">
-                            <label
-                              htmlFor=""
-                              className="lg:text-xl  font-medium text-white"
-                            >
-                              Ngày, tháng, năm sinh dương lịch
-                            </label>
-                            <div className="flex w-full gap-3 lg:gap-16">
-                              <div
-                                onClick={() =>
-                                  setSelectedDrop(selectedDrop === 1 ? null : 1)
-                                }
-                                className="form-input flex flex-1 justify-between items-center bg-white relative"
+                    <div className="relative w-full h-[360px] lg:h-[444px]">
+                      <div
+                        className="relative w-full h-full"
+                        style={{ filter: "blur(3px)" }}
+                      >
+                        <div className="absolute z-10 inset-0 p-5 lg:px-24 lg:pt-16 lg:pb-12 border-2 border-gradient-radius-3 rounded-[32px]"></div>
+                        <div className="absolute inset-[2px] rounded-[32px] bg-gradient-to-b from-[rgba(217,217,217,0.20)] to-[rgba(115,115,115,0.20)]"></div>
+                      </div>
+                      <div className="absolute z-10 inset-0 p-5 lg:px-24 lg:pt-16 lg:pb-12">
+                        <div className="flex flex-col gap-5 lg:gap-7 h-full">
+                          <div className="flex flex-col lg:flex-row gap-5 lg:gap-6">
+                            <div className="flex flex-col w-full gap-1 lg:gap-3">
+                              <label
+                                htmlFor=""
+                                className="text-sm lg:text-xl  font-medium text-white"
                               >
-                                <span className="">
-                                  {dateOfBirth === "" ? "Ngày" : dateOfBirth}
-                                </span>
-                                <img
-                                  src={arrowDown2}
-                                  alt=""
-                                  className={`${selectedDrop === 1 ? "rotate-180" : ""
-                                    } transition-transform duration-100 w-4 h-4 lg:w-auto lg:h-auto`}
-                                />
-                                {selectedDrop === 1 && (
-                                  <div className="form-option overflow-hidden h-52 z-10">
-                                    <div className="overflow-y-scroll flex flex-col">
-                                      {days.map((item, index) => {
-                                        return (
-                                          <span
-                                            onClick={() => setDateOfBirth(item)}
-                                            className="px-4 cursor-pointer w-full py-2 hover:bg-primary hover:text-white lg:text-base text-sm"
-                                          >
-                                            {item}
-                                          </span>
-                                        );
-                                      })}
-                                    </div>
-                                  </div>
-                                )}
-                              </div>
-                              <div
-                                onClick={() =>
-                                  setSelectedDrop(selectedDrop === 2 ? null : 2)
-                                }
-                                className="form-input flex flex-1 justify-between bg-white relative items-center"
-                              >
-                                <span className="">
-                                  {monthOfBirth === "" ? "Tháng" : monthOfBirth}
-                                </span>
-                                <img
-                                  src={arrowDown2}
-                                  alt=""
-                                  className={`${selectedDrop === 2 ? "rotate-180" : ""
-                                    } transition-transform duration-100 w-4 h-4 lg:w-auto lg:h-auto`}
-                                />
-                                {selectedDrop === 2 && (
-                                  <div className="form-option overflow-hidden h-52 z-10">
-                                    <div className="overflow-y-scroll flex flex-col">
-                                      {months.map((item, index) => {
-                                        return (
-                                          <span
-                                            onClick={() =>
-                                              setMonthOfBirth(item)
-                                            }
-                                            className="px-4 cursor-pointer w-full py-2 hover:bg-primary hover:text-white lg:text-base text-sm"
-                                          >
-                                            {item}
-                                          </span>
-                                        );
-                                      })}
-                                    </div>
-                                  </div>
-                                )}
-                              </div>
+                                Họ và tên khai sinh
+                              </label>
                               <input
                                 type="text"
-                                placeholder="Năm"
-                                className="form-input flex-1 min-w-0"
-                                onChange={(e) => setYearOfBirth(e.target.value)}
+                                placeholder="Nhập họ và tên"
+                                className="form-input"
                               />
                             </div>
-                          </div>
-                        </div>
-                        <div className="flex flex-col lg:flex-row gap-3 lg:gap-16">
-                          <div className="flex gap-3 items-center">
-                            <div
-                              onClick={() => setIsCheckLove(!isCheckLove)}
-                              className={`${isCheckLove && "bg-[#d9d9d9]"
-                                } rounded-full`}
-                            >
-                              <div className="w-4 h-4 border-gradient-radius relative"></div>
+                            <div className="flex flex-col w-full gap-1 lg:gap-3">
+                              <label
+                                htmlFor=""
+                                className="text-sm lg:text-xl  font-medium text-white"
+                              >
+                                Chọn giới tính
+                              </label>
+                              <div
+                                onClick={() =>
+                                  setSelectedDrop(selectedDrop === 0 ? null : 0)
+                                }
+                                className="form-input flex justify-between items-center bg-white relative"
+                              >
+                                <span className="">
+                                  {gender === 0 ? "Nam" : "Nữ"}
+                                </span>
+                                <img
+                                  src={arrowDown2}
+                                  alt=""
+                                  className={`${
+                                    selectedDrop === 0 ? "rotate-180" : ""
+                                  } transition-transform duration-100 w-4 h-4 lg:w-auto lg:h-auto`}
+                                />
+                                {selectedDrop === 0 && (
+                                  <div className="form-option z-10">
+                                    {["Nam", "Nữ"].map((item, index) => {
+                                      return (
+                                        <span
+                                          onClick={() => setGender(index)}
+                                          className="px-4 cursor-pointer w-full py-2 hover:bg-primary hover:text-white lg:text-base text-sm"
+                                        >
+                                          {item}
+                                        </span>
+                                      );
+                                    })}
+                                  </div>
+                                )}
+                              </div>
                             </div>
-                            <span className=" text-sm lg:text-base text-white">
-                              Xem cả đường tình duyên, hôn nhân
-                            </span>
                           </div>
-                          <div className="flex gap-3 items-center">
-                            <div
-                              onClick={() =>
-                                setIsCheckAppropriatePhone(
-                                  !isCheckAppropriatePhone
-                                )
-                              }
-                              className={`${isCheckAppropriatePhone && "bg-[#d9d9d9]"
-                                } rounded-full`}
-                            >
-                              <div className="w-4 h-4 border-gradient-radius relative"></div>
+                          <div className="flex gap-6">
+                            <div className="flex flex-col w-full gap-1 lg:gap-3">
+                              <label
+                                htmlFor=""
+                                className="lg:text-xl  font-medium text-white"
+                              >
+                                Ngày, tháng, năm sinh dương lịch
+                              </label>
+                              <div className="flex w-full gap-3 lg:gap-16">
+                                <div
+                                  onClick={() =>
+                                    setSelectedDrop(
+                                      selectedDrop === 1 ? null : 1
+                                    )
+                                  }
+                                  className="form-input flex flex-1 justify-between items-center bg-white relative"
+                                >
+                                  <span className="">
+                                    {dateOfBirth === "" ? "Ngày" : dateOfBirth}
+                                  </span>
+                                  <img
+                                    src={arrowDown2}
+                                    alt=""
+                                    className={`${
+                                      selectedDrop === 1 ? "rotate-180" : ""
+                                    } transition-transform duration-100 w-4 h-4 lg:w-auto lg:h-auto`}
+                                  />
+                                  {selectedDrop === 1 && (
+                                    <div className="form-option overflow-hidden h-52 z-10">
+                                      <div className="overflow-y-scroll flex flex-col">
+                                        {days.map((item, index) => {
+                                          return (
+                                            <span
+                                              onClick={() =>
+                                                setDateOfBirth(item)
+                                              }
+                                              className="px-4 cursor-pointer w-full py-2 hover:bg-primary hover:text-white lg:text-base text-sm"
+                                            >
+                                              {item}
+                                            </span>
+                                          );
+                                        })}
+                                      </div>
+                                    </div>
+                                  )}
+                                </div>
+                                <div
+                                  onClick={() =>
+                                    setSelectedDrop(
+                                      selectedDrop === 2 ? null : 2
+                                    )
+                                  }
+                                  className="form-input flex flex-1 justify-between bg-white relative items-center"
+                                >
+                                  <span className="">
+                                    {monthOfBirth === ""
+                                      ? "Tháng"
+                                      : monthOfBirth}
+                                  </span>
+                                  <img
+                                    src={arrowDown2}
+                                    alt=""
+                                    className={`${
+                                      selectedDrop === 2 ? "rotate-180" : ""
+                                    } transition-transform duration-100 w-4 h-4 lg:w-auto lg:h-auto`}
+                                  />
+                                  {selectedDrop === 2 && (
+                                    <div className="form-option overflow-hidden h-52 z-10">
+                                      <div className="overflow-y-scroll flex flex-col">
+                                        {months.map((item, index) => {
+                                          return (
+                                            <span
+                                              onClick={() =>
+                                                setMonthOfBirth(item)
+                                              }
+                                              className="px-4 cursor-pointer w-full py-2 hover:bg-primary hover:text-white lg:text-base text-sm"
+                                            >
+                                              {item}
+                                            </span>
+                                          );
+                                        })}
+                                      </div>
+                                    </div>
+                                  )}
+                                </div>
+                                <input
+                                  type="text"
+                                  placeholder="Năm"
+                                  className="form-input flex-1 min-w-0"
+                                  onChange={(e) =>
+                                    setYearOfBirth(e.target.value)
+                                  }
+                                />
+                              </div>
                             </div>
-                            <span className=" text-sm lg:text-base text-white">
-                              Xem số điện thoại hợp
-                            </span>
                           </div>
-                        </div>
-                        <div className="lg:flex hidden w-full justify-center">
-                          <button className="lg:w-72 text-white lg:text-xl  font-medium bg-linear-1 lg:h-12 rounded-[100px] border-[0.5px] border-white backdrop-blur-lg">
-                            Tra cứu
-                          </button>
+                          <div className="flex flex-col lg:flex-row gap-3 lg:gap-16">
+                            <div className="flex gap-3 items-center">
+                              <div
+                                onClick={() => setIsCheckLove(!isCheckLove)}
+                                className={`${
+                                  isCheckLove && "bg-[#d9d9d9]"
+                                } rounded-full`}
+                              >
+                                <div className="w-4 h-4 border-gradient-radius relative"></div>
+                              </div>
+                              <span className=" text-sm lg:text-base text-white">
+                                Xem cả đường tình duyên, hôn nhân
+                              </span>
+                            </div>
+                            <div className="flex gap-3 items-center">
+                              <div
+                                onClick={() =>
+                                  setIsCheckAppropriatePhone(
+                                    !isCheckAppropriatePhone
+                                  )
+                                }
+                                className={`${
+                                  isCheckAppropriatePhone && "bg-[#d9d9d9]"
+                                } rounded-full`}
+                              >
+                                <div className="w-4 h-4 border-gradient-radius relative"></div>
+                              </div>
+                              <span className=" text-sm lg:text-base text-white">
+                                Xem số điện thoại hợp
+                              </span>
+                            </div>
+                          </div>
+                          <div className="lg:flex hidden w-full justify-center">
+                            <button className="lg:w-72 text-white lg:text-xl  font-medium bg-linear-1 lg:h-12 rounded-[100px] border-[0.5px] border-white backdrop-blur-lg">
+                              Tra cứu
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="flex lg:hidden w-full justify-center relative z-10">
-                    <button className="text-white px-12 py-2 text-base  font-medium bg-linear-1 rounded-[100px] border-[0.5px] border-white backdrop-blur-lg">
-                      Tra cứu
-                    </button>
+                    <div className="flex lg:hidden w-full justify-center relative z-10">
+                      <button className="text-white px-12 py-2 text-base  font-medium bg-linear-1 rounded-[100px] border-[0.5px] border-white backdrop-blur-lg">
+                        Tra cứu
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className="container relative">
-            <div className="text-white lg:px-[132px] absolute inset-0">
-              <h2 className=" lg:text-[24px] text-[16px] text-left font-prata-regular">
+            <div className="text-white relative z-10">
+              <h2 className=" lg:text-2xl text-base font-prata-regular">
                 Chú thích
               </h2>
-              <ul className="lg:text-[16px] text-[14px]  font-ibmplexsans-regular list-disc list-inside">
+              <ul className="lg:text-base text-sm font-ibmplexsans-regular list-disc list-inside">
                 <li>
                   Nếu ngày sinh trên giấy tờ (căn cước, chứng minh thư, bằng lái
                   xe, khai sinh,..) và ngày sinh dương lịch thật của bạn khác
@@ -322,11 +337,19 @@ const SearchPage = () => {
           </div>
         </div>
 
-        <div className="relative z-10 pt-40 pb-14 container">
-          <div className="flex gap-x-10 flex-col lg:mt-[315px] lg:flex-row">
+        <div className="relative z-10 pb-14 container">
+          <div className="flex gap-x-10 flex-col pt-12 lg:flex-row">
             <div className="flex flex-col relative flex-[0.5] lg:items-center gap-4 -mb-44 lg:mb-0">
-              <img src={star} alt="" className="absolute w-[32px] h-[32px] right-[354px] left-[4px] block lg:hidden" />
-              <img src={star} alt="" className="absolute w-[32px] h-[32px] right-[179px] left-[179px] block lg:hidden" />
+              <img
+                src={star}
+                alt=""
+                className="absolute w-[32px] h-[32px] right-[354px] left-[4px] block lg:hidden"
+              />
+              <img
+                src={star}
+                alt=""
+                className="absolute w-[32px] h-[32px] right-[179px] left-[179px] block lg:hidden"
+              />
               <p className="absolute w-[70%] top-10 right-0 lg:w-full lg:static text-xl lg:text-[2rem] lg:leading-10 font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text z-20">
                 Vì sao thần số học lại quan trọng và cần thiết?
               </p>
@@ -355,8 +378,16 @@ const SearchPage = () => {
               ))}
             </div>
           </div>
-          <img src={star} alt="" className="absolute w-[32px] h-[32px] right-[992px] left-[416px] lg:block hidden" />
-          <img src={star} alt="" className="absolute right-[99px] left-[1275px] lg:block hidden" />
+          <img
+            src={star}
+            alt=""
+            className="absolute w-[32px] h-[32px] right-[992px] left-[416px] lg:block hidden"
+          />
+          <img
+            src={star}
+            alt=""
+            className="absolute right-[99px] left-[1275px] lg:block hidden"
+          />
         </div>
       </div>
     </>
