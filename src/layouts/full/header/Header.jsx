@@ -40,7 +40,7 @@ const menuItems = [
   },
   {
     name: "Liên hệ",
-    href: "#",
+    href: "/lien-he",
   },
   {
     name: "Tài khoản",

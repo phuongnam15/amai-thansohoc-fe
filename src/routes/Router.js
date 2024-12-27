@@ -9,6 +9,7 @@ const BlankLayout = Loadable(lazy(() => import('../layouts/blank/BlankLayout')))
 const HomePage = Loadable(lazy(() => import("../views/home/HomePage")));
 const IntroducePage = Loadable(lazy(() => import("../views/introduce/IntroducePage")));
 const SearchPage = Loadable(lazy(() => import("../views/search/SearchPage")));
+const Contact = Loadable(lazy(() => import("../views/contact/Contact")));
 
 const Router = [
   {
@@ -18,7 +19,8 @@ const Router = [
       { path: '/', element: <Navigate to="/trang-chu" /> },
       { path: "/trang-chu", element: <HomePage /> },
       { path: "/gioi-thieu", element: <IntroducePage /> },
-      { path: "/tra-cuu", element: <SearchPage /> }
+      { path: "/tra-cuu", element: <SearchPage /> },
+      { path: "/lien-he", element: <Contact /> }
     ],
   },
   {

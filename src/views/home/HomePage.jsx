@@ -942,8 +942,8 @@ const HomePage = () => {
                           </div>
                           <div
                             className={`overflow-hidden transition-all duration-500 ${selectedQuestion === index
-                                ? "max-h-[200px] mb-2"
-                                : "max-h-0"
+                              ? "max-h-[200px] mb-2"
+                              : "max-h-0"
                               }`}
                           >
                             <p className=" text-sm xl:text-base text-white">

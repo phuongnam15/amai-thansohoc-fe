@@ -86,7 +86,7 @@ const SearchPage = () => {
               <img
                 src={logoSearch}
                 alt=""
-                className="hidden lg:block pt-[120px] z-40"
+                className="hidden lg:block pt-[120px] pb-[-24px] mb-[-65px] z-40"
               />
             </div>
 
@@ -143,9 +143,8 @@ const SearchPage = () => {
                                 <img
                                   src={arrowDown2}
                                   alt=""
-                                  className={`${
-                                    selectedDrop === 0 ? "rotate-180" : ""
-                                  } transition-transform duration-100 w-4 h-4 lg:w-auto lg:h-auto`}
+                                  className={`${selectedDrop === 0 ? "rotate-180" : ""
+                                    } transition-transform duration-100 w-4 h-4 lg:w-auto lg:h-auto`}
                                 />
                                 {selectedDrop === 0 && (
                                   <div className="form-option z-10">
@@ -187,9 +186,8 @@ const SearchPage = () => {
                                   <img
                                     src={arrowDown2}
                                     alt=""
-                                    className={`${
-                                      selectedDrop === 1 ? "rotate-180" : ""
-                                    } transition-transform duration-100 w-4 h-4 lg:w-auto lg:h-auto`}
+                                    className={`${selectedDrop === 1 ? "rotate-180" : ""
+                                      } transition-transform duration-100 w-4 h-4 lg:w-auto lg:h-auto`}
                                   />
                                   {selectedDrop === 1 && (
                                     <div className="form-option overflow-hidden h-52 z-10">
@@ -226,9 +224,8 @@ const SearchPage = () => {
                                   <img
                                     src={arrowDown2}
                                     alt=""
-                                    className={`${
-                                      selectedDrop === 2 ? "rotate-180" : ""
-                                    } transition-transform duration-100 w-4 h-4 lg:w-auto lg:h-auto`}
+                                    className={`${selectedDrop === 2 ? "rotate-180" : ""
+                                      } transition-transform duration-100 w-4 h-4 lg:w-auto lg:h-auto`}
                                   />
                                   {selectedDrop === 2 && (
                                     <div className="form-option overflow-hidden h-52 z-10">
@@ -264,9 +261,8 @@ const SearchPage = () => {
                             <div className="flex gap-3 items-center">
                               <div
                                 onClick={() => setIsCheckLove(!isCheckLove)}
-                                className={`${
-                                  isCheckLove && "bg-[#d9d9d9]"
-                                } rounded-full`}
+                                className={`${isCheckLove && "bg-[#d9d9d9]"
+                                  } rounded-full`}
                               >
                                 <div className="w-4 h-4 border-gradient-radius relative"></div>
                               </div>
@@ -281,9 +277,8 @@ const SearchPage = () => {
                                     !isCheckAppropriatePhone
                                   )
                                 }
-                                className={`${
-                                  isCheckAppropriatePhone && "bg-[#d9d9d9]"
-                                } rounded-full`}
+                                className={`${isCheckAppropriatePhone && "bg-[#d9d9d9]"
+                                  } rounded-full`}
                               >
                                 <div className="w-4 h-4 border-gradient-radius relative"></div>
                               </div>
@@ -348,7 +343,7 @@ const SearchPage = () => {
               <img
                 src={star}
                 alt=""
-                className="absolute w-[32px] h-[32px] right-[179px] left-[179px] block lg:hidden"
+                className="absolute w-[32px] h-[32px] left-1/2 -translate-x-1/2 top-[135px] z-20 block lg:hidden"
               />
               <p className="absolute w-[70%] top-10 right-0 lg:w-full lg:static text-xl lg:text-[2rem] lg:leading-10 font-prata-regular text-transparent bg-gradient-to-r from-white to-primary-6 bg-clip-text z-20">
                 Vì sao thần số học lại quan trọng và cần thiết?
@@ -386,7 +381,7 @@ const SearchPage = () => {
           <img
             src={star}
             alt=""
-            className="absolute right-[99px] left-[1275px] lg:block hidden"
+            className="absolute right-[99px] left-[1275px] top-[800px] z-30 lg:block hidden"
           />
         </div>
       </div>
